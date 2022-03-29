@@ -1,0 +1,373 @@
+*{
+	padding: 0;
+	margin: 0 auto;
+}
+
+@font-face{
+	font-family: 'BebasNeue';
+	src:url("./fontes/BebasNeue-Regular.otf");
+}
+
+body{
+	display: flex;
+	flex-direction: column;
+}
+
+.box-principal{
+	border: 1px solid #BDEFCD;
+	padding: 25px;
+	width: 260px;
+	height: auto;
+	margin-top: 50px;
+	margin-bottom: 15px;
+	text-align: center;
+	box-shadow: 0px 0px 10px #D8FCE4;
+	font-family: arial;
+	font-size: 10pt;
+}
+
+.box-principal h2{
+	font-family: 'BebasNeue', arial;
+	font-size: 40pt;
+}
+
+input{
+	width: 95%;
+	padding: 7px;
+	border-radius: 7px;
+	border: 1px solid #CFF7DC;
+}
+
+input[type=submit]{
+	background-color: #CFF7DC;
+	cursor: pointer;
+}
+
+
+.box-link-cadastrar{
+	border: 1px solid #BDEFCD;
+	padding: 25px;
+	margin-top: 15px;
+	width: 260px;
+	box-shadow: 0px 0px 6px #D8FCE4;
+	text-align: center;
+	font-family: arial;
+	font-size: 10pt;
+}
+
+a{
+	text-decoration: none;
+	color: #00B33C;
+}
+
+.geral{
+	width: 100%;
+}
+
+.topo{
+	width: 100%;
+	height: 70px;
+	background-color: green;
+	display: flex;
+}
+
+.nome{
+	color: white;
+	font-family: 'BebasNeue', arial;
+	font-size: 20pt; 
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.bem-vindo{
+	font-family: arial;	
+	font-size: 12pt; 
+}
+
+.logout{
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.meio{
+	width: 100%;
+	height: 450px;
+	background-color: #DFFFEA;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	font-family: 'arial';
+}
+
+#dados{
+	height: 100px;
+	padding: 10px
+}
+
+.menu{
+	height: 100px;
+	width: 100%;
+	left: 0px;
+	bottom: 0px;
+	position: fixed;
+	display: flex;
+	flex-direction: row;
+	z-index: 2;
+	align-items: center;
+	background-color: #DFFFEA;
+}
+
+.sub-menu1{
+	width: 180px;
+	height: 80px;
+	align-items: center;
+	display: flex;
+}
+
+.sub-menu1 img{
+	width: 50px;
+	height: 53px;
+}
+
+.sub-menu1 button{
+	border: 0px;
+	cursor: pointer;
+	padding: 7px;
+}
+
+.sub-menu1 button:hover{
+	background-color: #B8F5CD;
+	border-radius: 7px;
+}
+
+
+
+/* ---------------------JOGO ADIVINHA CORES ---------------------------*/
+
+
+.fundo{
+	border: 1px solid red;
+	width: 800px;
+	height: 900px;
+	padding: 20px;
+	margin-top: 20px;
+	border: 1px solid #BDEFCD;
+	box-shadow: 0px 0px 6px #D8FCE4;
+}
+
+.divInterna{
+	height: 100px;
+	padding: 10px;
+	text-align: center;
+}
+
+.radio{
+}
+
+form{
+}
+
+.footer_adivinha{
+	width: 80%;
+	height: 100px;
+	padding: 25px;
+	margin-top: 25px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.divBotao{
+	border: 1px solid red;
+}
+
+.enviar_Adivinha{
+	width: 60%;
+	margin-top: 5px;
+	height: 10px;
+	background-color: #9CE97A;
+	border: none;
+	font-size: 25pt;
+	cursor: pointer;
+	font-family: 'BebasNeue', arial;
+}
+
+.enviar_Adivinha:hover{
+	background-color: #37781A;
+	border: none;
+	color: white;
+}
+
+#nome1{
+	
+}
+
+.topo_adivinha{
+	width: 100%;
+	height: 50px;
+	background-color: #f1f1f1; 
+	display: flex;
+	font-family: 'BebasNeue', arial;
+	font-size: 20pt;
+	align-items: center;
+}
+
+#resultado_adivinhaCor{
+	height: 80%;
+	width: 40%;
+	border: 1px solid red;
+	padding: 25px;
+	margin-top: 40px;
+	margin-left: 20px;
+}
+
+.container_meioPrincipal{
+	display: flex;
+}
+
+
+
+
+/*-------------------- PAINEL JOGO ---------------------------*/
+
+.boxSection{
+	height: auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.tituloPainelJogo{
+	width: 100%;
+	display: flex;
+	padding: 40px 0px 10px 0px;
+}
+
+.blocoCards{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+
+.cardPainelJogo{
+	width: 250px;
+	height: 200px;
+	padding: 20px;
+	margin: 20px;
+}
+
+
+
+
+
+/*MEDIAS QUERY*/
+
+/*__________________ 320 */
+
+@media (max-width: 500px) {
+ 
+	.menu{
+		display: flex;
+		flex-wrap: column;
+	}
+
+	.sub-menu1{
+		width: 65px;
+		height: 80px;
+		display: flex;
+	}
+
+	.sub-menu1 img{
+		width: 40px;
+		height: 40px;
+	}
+
+	.topo{
+		width: 100%;
+		height: 100px;
+		padding: 25px;
+		background-color: green;
+		display: flex;
+	}
+}
+
+@media (max-width: 360px) {
+ 
+
+	.menu{
+		display: flex;
+		flex-wrap: column;
+	}
+
+	  .sub-menu1{
+		width: 40px;
+		height: 60px;
+		display: flex;
+	}
+
+		.sub-menu1 img{
+		width: 30px;
+		height: 30px;
+	}
+}
+
+
+/* --------------------- JOGO ADIVINHA CORES ---------------------------*/
+
+
+.fundo{
+	border: 1px solid red;
+	width: 800px;
+	display: block;
+	padding: 25px;
+	margin-top: 40px;
+	border: 1px solid #BDEFCD;
+	box-shadow: 0px 0px 6px #D8FCE4;
+}
+
+.divInterna{
+	height: 100px;
+	padding: 10px;
+	text-align: center;
+}
+
+.form_jogo{
+	display: flex;
+	padding: 20px;
+}
+
+.footer_adivinha{
+	width: 80%;
+	height: 100px;
+	padding: 25px;
+	margin-top: 25px;
+	margin-bottom: 100px;
+}
+
+.enviar_Adivinha{
+	width: 70%;
+	margin-top: 10px;
+	height: 80px;
+	background-color: #9CE97A;
+	padding: 25px;
+	border: none;
+	font-size: 25pt;
+	cursor: pointer;
+	font-family: 'BebasNeue', arial;
+	margin-bottom: 100px;
+}
+
+.enviar_Adivinha:hover{
+	background-color: #37781A;
+	border: none;
+	color: white;
+}
+
+
+
+
+
