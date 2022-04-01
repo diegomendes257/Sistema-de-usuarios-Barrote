@@ -47,46 +47,54 @@
                 <div class="blocoCards">
                     <div class ="cardPainelJogo">
                         <div class="cardImagem">
-                            img
+                            <img src="./img/img_jogoAdivinha.jpg" alt="">
                         </div>
                         <div class="cardDescricao">
-                            Descrição
+                            <p>Acerte a cor da letra e ganhe moedas!</p>
                         </div>
-                        <div>
-                        <nav class="sub-menu1"><button onclick="window.location='./jogoAdivinha/jogoAdivinha.php';">Adivinha a cor</button></nav>
+                        <div class="botaoCard">
+                            <nav class="">
+                                <button onclick="window.location='./jogoAdivinha/jogoAdivinha.php';">Adivinha a cor</button>
+                            </nav>
                         </div>
                     </div>
                     <div class ="cardPainelJogo">
                         <div class="cardImagem">
-                            img
+                            <img src="./img/img_jogoAdivinha.jpg" alt="">
                         </div>
                         <div class="cardDescricao">
-                            Descrição
+                            <p>Acerte a cor da letra e ganhe moedas!</p>
                         </div>
-                        <div>
-                            botão
+                        <div class="botaoCard">
+                            <nav class="">
+                                <button onclick="window.location='./jogoAdivinha/jogoAdivinha.php';">Adivinha a cor</button>
+                            </nav>
                         </div>
                     </div>
                     <div class ="cardPainelJogo">
                         <div class="cardImagem">
-                            img
+                            <img src="./img/img_jogoAdivinha.jpg" alt="">
                         </div>
                         <div class="cardDescricao">
-                            Descrição
+                            <p>Acerte a cor da letra e ganhe moedas!</p>
                         </div>
-                        <div>
-                            botão
+                        <div class="botaoCard">
+                            <nav class="">
+                                <button onclick="window.location='./jogoAdivinha/jogoAdivinha.php';">Adivinha a cor</button>
+                            </nav>
                         </div>
                     </div>
                     <div class ="cardPainelJogo">
                         <div class="cardImagem">
-                            img
+                            <img src="./img/img_jogoAdivinha.jpg" alt="">
                         </div>
                         <div class="cardDescricao">
-                            Descrição
+                            <p>Acerte a cor da letra e ganhe moedas!</p>
                         </div>
-                        <div>
-                            botão
+                        <div class="botaoCard">
+                            <nav class="">
+                                <button onclick="window.location='./jogoAdivinha/jogoAdivinha.php';">Adivinha a cor</button>
+                            </nav>
                         </div>
                     </div>
                 </div>
