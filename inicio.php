@@ -73,15 +73,10 @@
 								recebeDados = document.getElementById('recebe');
 								recebeDados.innerHTML = "Seu nome: " + nome + "<br>" + "Seu saldo: " + saldo + "<br><br>";
            						document.getElementById('recebe').style.display = 'block';
-								
 							}else{
             					document.getElementById('recebe').style.display = 'none';
-    					}
-
-							
+    						}
 						}
-						
-						document.write(nomeCores[1]);
 					</script>
 				</section>
 			</div>

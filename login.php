@@ -14,8 +14,13 @@ session_start();
 
 		if($u->login($email, $senha) == true){
 			if(isset($_SESSION['id'])){
-				header("Location: inicio.php");
-				$_SESSION['id'];
+				if($_SESSION['adm'] == 0){
+					header("Location: inicio.php");
+					$_SESSION['id'];
+				}else{
+					header("Location: ./adm/painelADM.php");
+					$_SESSION['id'];
+				}
 			}else{
 				header("Location: principal.php");
 				$_SESSION['menError'] = "Você digitou algo errado ou o cadastro não existe, tente novamente";

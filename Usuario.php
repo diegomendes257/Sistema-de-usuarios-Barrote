@@ -16,17 +16,18 @@
 
 		if($consulta->rowCount() > 0){
 			$dado = $consulta->fetch();
-
-			$_SESSION['id'] = $dado['id'];
-			$_SESSION['email'] = $dado['email'];
-			$_SESSION['nome'] = $dado['nome'];
-			$_SESSION['telefone'] = $dado['telefone'];
-			$_SESSION['saldo'] = $dado['saldo'];
+				$_SESSION['id'] = $dado['id'];
+				$_SESSION['email'] = $dado['email'];
+				$_SESSION['nome'] = $dado['nome'];
+				$_SESSION['telefone'] = $dado['telefone'];
+				$_SESSION['saldo'] = $dado['saldo'];
+				$_SESSION['adm'] = $dado['adm'];
 				return true;
 		}else{
 			return false;
 		}
 	}
+	
 
 
 //------------------------CADASTRAR--------------------------------------------------
