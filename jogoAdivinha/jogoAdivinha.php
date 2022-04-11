@@ -2,11 +2,12 @@
 	include("../conexao1.php");
 
 	$idDebita = $_SESSION['id'];
-		$consulta1 = "SELECT id, saldo, nome FROM usuario WHERE id = :id";
-			$consulta1 = $conexao->prepare($consulta1);
-			$consulta1->bindValue(":id", $idDebita);
-			$consulta1->execute();
-			$mostra1 = $consulta1->fetch();
+	$consulta1 = "SELECT id, saldo, nome FROM usuario WHERE id = :id";
+	$consulta1 = $conexao->prepare($consulta1);
+	$consulta1->bindValue(":id", $idDebita);
+	$consulta1->execute();
+	$mostra1 = $consulta1->fetch();
+	
 ?>
 
 <!DOCTYPE html>
@@ -30,9 +31,7 @@
 				<div class="col-3 nome-valor">
 					<span class="nome-Saldo">Saldo:</span>
 					<div class='valorExibe'>
-						<?php
-							echo 'R$ '.number_format($mostra1['saldo'] , 2, ',',' . ');
-						?>
+						
 					</div>
 				</div>
 				<div class="col-3" id="botaoVoltar">

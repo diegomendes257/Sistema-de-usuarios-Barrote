@@ -4,11 +4,14 @@
 
 	$u = new Usuario();
 	$idDebita = $_SESSION['id'];
-		$consulta1 = "SELECT id, saldo, nome FROM usuario WHERE id = :id";
-			$consulta1 = $conexao->prepare($consulta1);
-			$consulta1->bindValue(":id", $idDebita);
-			$consulta1->execute();
-			$mostra1 = $consulta1->fetch();
+	$adm = $_SESSION['adm'];
+	$u->validaUsuario($idDebita, $adm);
+
+	$consulta1 = "SELECT id, saldo, nome, adm FROM usuario WHERE id = :id";
+	$consulta1 = $conexao->prepare($consulta1);
+	$consulta1->bindValue(":id", $idDebita);
+	$consulta1->execute();
+	$mostra1 = $consulta1->fetch();
 ?>
 
 <!DOCTYPE html>
@@ -47,8 +50,8 @@
 				</div>
 			</header>
 			<nav style='text-align:center'>
-						<a href="../consulta.php">Clique para consultar!</a> - /
-						<a href="../adicionaValor.php">Clique para creditar dinheiro para alguém!</a> - /
+						<a href="consulta.php">Clique para consultar!</a> - /
+						<a href="adicionaValor.php">Clique para creditar dinheiro para alguém!</a> - /
 						<a href="adicionaValorDado.php">Clique para creditar e ser debitado!</a> - /
 						<a href="formImagem.php">Carregar imagem!</a>
 			</nav>

@@ -11,9 +11,6 @@
 			$mostra1 = $consulta1->fetch();
 ?>
 
-
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 	<head>
@@ -45,45 +42,6 @@
                     <h3>Escolha seu jogo</h3>
                 </div>
                 <div class="blocoCards">
-                    <div class ="cardPainelJogo">
-                        <div class="cardImagem">
-                            <img src="./img/img_jogoAdivinha.jpg" alt="">
-                        </div>
-                        <div class="cardDescricao">
-                            <p>Acerte a cor da letra e ganhe moedas!</p>
-                        </div>
-                        <div class="botaoCard">
-                            <nav class="">
-                                <button onclick="window.location='./jogoAdivinha/jogoAdivinha.php';">Adivinha a cor</button>
-                            </nav>
-                        </div>
-                    </div>
-                    <div class ="cardPainelJogo">
-                        <div class="cardImagem">
-                            <img src="./img/img_jogoAdivinha.jpg" alt="">
-                        </div>
-                        <div class="cardDescricao">
-                            <p>Acerte a cor da letra e ganhe moedas!</p>
-                        </div>
-                        <div class="botaoCard">
-                            <nav class="">
-                                <button onclick="window.location='./jogoAdivinha/jogoAdivinha.php';">Adivinha a cor</button>
-                            </nav>
-                        </div>
-                    </div>
-                    <div class ="cardPainelJogo">
-                        <div class="cardImagem">
-                            <img src="./img/img_jogoAdivinha.jpg" alt="">
-                        </div>
-                        <div class="cardDescricao">
-                            <p>Acerte a cor da letra e ganhe moedas!</p>
-                        </div>
-                        <div class="botaoCard">
-                            <nav class="">
-                                <button onclick="window.location='./jogoAdivinha/jogoAdivinha.php';">Adivinha a cor</button>
-                            </nav>
-                        </div>
-                    </div>
                     <div class ="cardPainelJogo">
                         <div class="cardImagem">
                             <img src="./img/img_jogoAdivinha.jpg" alt="">

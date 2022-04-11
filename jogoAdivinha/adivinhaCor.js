@@ -1,5 +1,18 @@
 $(document).ready(function(){
 	
+	atualizaValor();
+
+	function atualizaValor(){
+		$.ajax({
+			type: 'POST',
+			url: 'atualizaValor.php',
+			data: {tem: true},
+			success: function(data){
+				$('.valorExibe').html(data)
+			}
+		});
+	}
+
 	let nomeCores = ['AZUL','AMARELO','VERDE','ROSA','CINZA','PRETO','BRANCO','VERMELHO'];
 	var Cores = ['GRAY','WHITE','BLACK','PINK','BLUE','YELLOW','RED','GREEN'];
 
@@ -55,12 +68,15 @@ $(document).ready(function(){
 			$.ajax({
 				url:'enviaBonus.php',
 				type:'POST',
-				data: {pontos: pontos},
+				data: {
+					pontos: pontos,
+				},
 				success: function(data){
 					if(pontos == 1){
 						alert("Você ganhou moedas");
 						exibeNome(numeroAleatorio, numeroAleatorio2);
 					}
+					atualizaValor();
 				}
 			});
 			
@@ -86,8 +102,7 @@ $(document).ready(function(){
 					if(pontos == 0){
 						alert("Você perdeu moedas!");
 					}
-
-
+					atualizaValor();
 				}
 			});
 		}

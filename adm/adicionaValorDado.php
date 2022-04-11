@@ -1,11 +1,17 @@
 <?php 
 	session_id();
 
-	if(isset($_POST['id']) && !empty($_POST['id']) && isset($_POST['valor']) && !empty($_POST['valor'])){
-        require "conexao1.php";
-        require 'Usuario.php';
-	    $u = new Usuario();
+	require "../conexao1.php";
+    require '../Usuario.php';
 
+	$u = new Usuario();
+	$idDebita = $_SESSION['id'];
+	$adm = $_SESSION['adm'];
+
+	$u->validaUsuario($idDebita, $adm);
+
+	if(isset($_POST['id']) && !empty($_POST['id']) && isset($_POST['valor']) && !empty($_POST['valor'])){
+		
 		$idValor = addslashes($_POST['id']);
 		$valor = addslashes($_POST['valor']);
 		$idDebita = $_SESSION['id'];
@@ -25,6 +31,6 @@
 				<button type="submit" name="enviar">Enviar valor</button>
 			</form>
 		<div>
-			<p><a href="inicio.php">Voltar para inicio</a></p>
+			<p><a href="painelADM.php">Voltar para inicio</a></p>
 		</div>
 		

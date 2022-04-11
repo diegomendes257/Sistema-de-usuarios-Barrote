@@ -27,8 +27,6 @@
 			return false;
 		}
 	}
-	
-
 
 //------------------------CADASTRAR--------------------------------------------------
 
@@ -62,20 +60,19 @@
 			
 	}
 
-
 //------------------------ADICIONAR VALOR--------------------------------------------------
 
 		public function adicionarValor($idValor, $valor){
 			global $conexao;
 
-			$id = $_SESSION['id'];
+			$id = $_SESSION['saldo'];
 			$consulta = "SELECT id, saldo FROM usuario WHERE id = :id";
 			$consulta = $conexao->prepare($consulta);
 			$consulta->bindValue(":id", $idValor);
 			$consulta->execute();
 			$mostra = $consulta->fetch();
 
-			if($valor > $mostra['saldo']){
+			if($valor > $id){
 				echo 'Você não pode enviar esse valor. Saldo insuficiente!';
 				return false;
 			}else{
@@ -98,7 +95,6 @@
 			}
 			
 		}
-
 
 //------------------------ADICIONAR VALOR E DEBITA DO OUTRO--------------------------------------------------
 
@@ -160,8 +156,6 @@
 			}
 		}
 
-
-
 //------------------------VISUALIZAR DADOS--------------------------------------------------
 
 		public function visualizarDados($id){
@@ -203,6 +197,7 @@
 			//unset($consulta); //fecha a consulta
 		}
 
+//------------------------VISUALIZAR DADOS--------------------------------------------------
 
 		public function apertouLevou(){
 			
@@ -222,6 +217,15 @@
 				echo 'Você está precisando acumular mais!';
 			}else{
 				echo 'Você está indo bem, continue! <br />Seu saldo é: R$ <b>'.$saldo['saldo'].'</b>';
+			}
+		}
+
+//------------------------VALIDA DADOS ADM OU USUARIO--------------------------------------------------
+		public function validaUsuario($id, $adm){
+			if($adm == 0){
+				unset($adm);
+				session_destroy();
+				header('Location: ../principal.php');
 			}
 		}
 

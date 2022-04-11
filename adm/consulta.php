@@ -1,10 +1,14 @@
 <?php
-	include("conexao1.php");
-	require 'Usuario.php';
+	include("../conexao1.php");
+	require '../Usuario.php';
 	$u = new Usuario();
 	session_id();
-?>
 
+	$idDebita = $_SESSION['id'];
+	$adm = $_SESSION['adm'];
+
+	$u->validaUsuario($idDebita, $adm);
+?>
 
 <!DOCTYPE html>
 <html>
@@ -35,7 +39,7 @@
 
 		<hr>
 		<div>
-			<p><a href="inicio.php">Voltar para inicio</a></p>
+			<p><a href="painelADM.php">Voltar para inicio</a></p>
 		</div>
 	</body>
 </html>
