@@ -90,7 +90,6 @@
 	font-family: 'BebasNeue', arial;
 	font-size: 70pt;
 	background-color: #E6E6E6;
-	padding: 12px 0px;
 }
 
 #divFooterJogo{
@@ -206,6 +205,7 @@ xl - para telas com tamanho a partir de 	1367px .
 	#divInternaTitulo{
 		font-size: 35pt;
 	}
+
 	#divInternaDescricao p{
 		font-size: 14px;
 	}
@@ -240,7 +240,7 @@ xl - para telas com tamanho a partir de 	1367px .
 		font-size: 35pt;
 	}
 	#divInternaDescricao p{
-		font-size: 16px;
+		font-size: 10pt;
 	}
 
 
@@ -265,7 +265,7 @@ xl - para telas com tamanho a partir de 	1367px .
 		font-size: 35pt;
 	}
 	#divInternaDescricao p{
-		font-size: 20px;
+		font-size: 16px;
 	}
 
 	#nome1{

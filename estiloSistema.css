@@ -97,15 +97,32 @@ a{
 	height: 450px;
 	background-color: #DFFFEA;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	text-align: center;
 	font-family: 'arial';
 }
 
+.banner{
+	height: 200px;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
 #dados{
-	height: 100px;
-	padding: 10px
+	height: auto;
+	padding: 20px;
+	background-color: red;
+	display: flex;
+}
+
+.listaInscritos{
+	height: auto;
+	padding: 10px;
 }
 
 .menu{

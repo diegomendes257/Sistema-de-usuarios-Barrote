@@ -31,7 +31,7 @@
 					?>
 				</div>
 				<div style="color:white;display:flex;align-items:center">
-					<?php echo 'Saldo:  R$ '.number_format($mostra1['saldo'] , 2, ',',' . ');?>
+					<?php echo 'Barro &nbsp '.number_format($mostra1['saldo'] , 2, ',',' . ');?>
 				</div>
 				<div class="logout">
 					<a style="color:yellow" href="inicio.php">Voltar</a>

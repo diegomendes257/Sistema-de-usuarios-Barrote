@@ -29,7 +29,7 @@
 					<h2>BARROTÉ</h2>
 				</div>
 				<div class="col-3 nome-valor">
-					<span class="nome-Saldo">Saldo:</span>
+					<span class="nome-Saldo">Barro &nbsp</span>
 					<div class='valorExibe'>
 						
 					</div>
@@ -48,7 +48,7 @@
 					<div class="container text-center" id="divInternaDescricao">
 						<p>Abaixo vai aparecer o nome de algumas cores com a fonte pintada de uma cor, diga abaixo qual é a cor da fonte</p>
 					</div>	
-					<div class="container-fluid mb-4 text-center" id="nome1">
+					<div class="container mb-4 text-center" id="nome1">
 						<script>
 								//exibeNome(numeroAleatorio, numeroAleatorio2);					 
 						</script>
@@ -111,9 +111,8 @@
 							<label>Azul</label>
 						</form> -->
 						<div class="footer_adivinha">
-							<div class="container-fluid p-3 mt-4">
-								<strong class="tituloEnvia">ENVIAR RESPOSTA</strong><br>
-								<button id="enviaResultado" class="enviar_Adivinha" value="enviar">ENVIAR</button>
+							<div class="container-fluid p-2 mt-2">
+								<button id="enviaResultado" class="enviar_Adivinha" value="enviar">ENVIAR RESPOSTA</button>
 							</div>
 						</div>
 					</div>

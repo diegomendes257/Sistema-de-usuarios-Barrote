@@ -13,7 +13,7 @@
         $consulta1->execute();
         $valor1 = $consulta1->fetch();
         
-        echo 'R$ '.number_format($valor1['saldo'] , 2, ',',' . ');
+        echo '  '.number_format($valor1['saldo'] , 2, ',',' . ');
 
     }
 ?>

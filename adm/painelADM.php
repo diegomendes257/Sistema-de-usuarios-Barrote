@@ -34,7 +34,7 @@
 					?>
 				</div>
 				<div style="color:white;display:flex;align-items:center">
-					<?php echo 'Saldo:  R$ '.number_format($mostra1['saldo'] , 2, ',',' . ');?>
+					<?php echo 'Barro &nbsp'.number_format($mostra1['saldo'] , 2, ',',' . ');?>
 				</div>
 				<div class="logout">
 					<?php 
@@ -65,11 +65,11 @@
 				</section>
 			</div>
 			<div class="menu">
-				<nav class="sub-menu1"><button onclick="/diego.php"><img src="../img/inicio_icon.png" alt="inicio"></button></nav>
+			<nav class="sub-menu1"><button onclick="window.location='../inicio.php'"><img src="../img/inicio_icon.png" alt="inicio"></button></nav>
 				<nav class="sub-menu1"><button onclick="window.location='../painelJogo.php';"><img src="../img/salao_icon.png" alt="salao"></button></nav>
 				<nav class="sub-menu1"><button><img src="../img/comercio_icon.png" alt="comercio"></button></nav>
 				<nav class="sub-menu1"><button><img src="../img/carteira_icon.png" alt="carteira"></button></nav>
-				<nav class="sub-menu1"><button><img src="../img/perfil_icon.png" alt="perfil"></button></nav>
+				<nav class="sub-menu1"><button onclick="window.location='../painelUsuario';"><img src="../img/perfil_icon.png" alt="perfil"></button></nav>
 			</div>
 		</div>
 	</body>

@@ -5,10 +5,14 @@
 	$u = new Usuario();
 	$idDebita = $_SESSION['id'];
 		$consulta1 = "SELECT id, saldo, nome FROM usuario WHERE id = :id";
-			$consulta1 = $conexao->prepare($consulta1);
-			$consulta1->bindValue(":id", $idDebita);
-			$consulta1->execute();
-			$mostra1 = $consulta1->fetch();
+		$consulta1 = $conexao->prepare($consulta1);
+		$consulta1->bindValue(":id", $idDebita);
+		$consulta1->execute();
+		$mostra1 = $consulta1->fetch();
+
+		$consultaTudo = "SELECT * FROM usuario";
+		$consultaTudo = $conexao->prepare($consultaTudo);
+		$consultaTudo->execute();
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +35,7 @@
 					?>
 				</div>
 				<div style="color:white;display:flex;align-items:center">
-					<?php echo 'Saldo:  R$ '.number_format($mostra1['saldo'] , 2, ',',' . ');?>
+					<?php echo 'Barro: '.number_format($mostra1['saldo'] , 2, ',',' . ');?>
 				</div>
 				<div class="logout">
 					<?php 
@@ -55,38 +59,77 @@
 						<a href="formImagem.php">Carregar imagem!</a>
 			</nav>
 			<div class="meio">
-				<section>
-					<h2><b>Aqui é o início de tudo!!!</b></h2>
-					<p>Vá para a aba de salão para se divertir!
-					Ganhe moedas fazendo as tarefas!</p>
+				<section class="container-fluid bg-white banner">
+					<h2>
+						<b>Aqui é o início de tudo!!!</b>
+					</h2>
+					<p>Vá para a aba de salão para se divertir! Ganhe moedas fazendo as tarefas!</p>
 				</section>
-				<section id="dados">
-					<p>Aparecerá aqui as informações</p>
-					<div id="recebe" style="display:none;"></div>
-					<button style="padding:7px; border:1px #808080 solid;" onclick="exibeNome('recebe')">Clique para ver seus dados!</button>
-					<script>
-						function exibeNome(recebe) {
-							var display = document.getElementById('recebe').style.display;
-							
-        					if(display == "none"){
-								let nome = "<?php echo $_SESSION['nome'] ?>";
-								let saldo = "<?php echo $mostra1['saldo'] ?>";
-								recebeDados = document.getElementById('recebe');
-								recebeDados.innerHTML = "Seu nome: " + nome + "<br>" + "Seu saldo: " + saldo + "<br><br>";
-           						document.getElementById('recebe').style.display = 'block';
-							}else{
-            					document.getElementById('recebe').style.display = 'none';
-    						}
-						}
-					</script>
+				<section id="dados" class="container-fluid bg-white">
+					<div class="container bg-primary listaInscritos">
+						<?php
+							echo'<table border="1">
+									<tr>
+										<td>
+											<span>Nome: </span>
+										</td>
+										<td>
+											<span>E-mail</span>
+										</td>
+										<td>
+											<span>Criado em:</span>
+										</td>
+									</tr>
+								';
+							while($mostraTudo = $consultaTudo->fetch()){
+								echo '
+									<tr><br/>
+										<td>
+											'.$mostraTudo['nome'].'
+										</td>
+										<td>
+											'.$mostraTudo['email'].'
+										</td>
+										<td>
+											'.date_format(new DateTime($mostraTudo['criado']), "d/m/Y H:i").'<br/>
+										</td>
+									</tr>
+								</table>
+								';
+							}
+						?>					
+					</div>
+					<div class="container bg-dark">
+						<p>Lista de quem se inscreveu</p>
+					</div>
+					<div class="container bg-success">
+						<p>Aparecerá aqui as informações</p>
+						<div id="recebe" style="display:none;"></div>
+						<button style="padding:7px; border:1px #808080 solid;" onclick="exibeNome('recebe')">Clique para ver seus dados!</button>
+						<script>
+							function exibeNome(recebe) {
+								var display = document.getElementById('recebe').style.display;
+								
+								if(display == "none"){
+									let nome = "<?php echo $_SESSION['nome'] ?>";
+									let saldo = "<?php echo $mostra1['saldo'] ?>";
+									recebeDados = document.getElementById('recebe');
+									recebeDados.innerHTML = "Seu nome: " + nome + "<br>" + "Seu saldo: " + saldo + "<br><br>";
+									document.getElementById('recebe').style.display = 'block';
+								}else{
+									document.getElementById('recebe').style.display = 'none';
+								}
+							}
+						</script>
+					</div>
 				</section>
 			</div>
 			<div class="menu">
-				<nav class="sub-menu1"><button onclick="/diego.php"><img src="img/inicio_icon.png" alt="inicio"></button></nav>
+				<nav class="sub-menu1"><button onclick="window.location='./inicio.php'"><img src="img/inicio_icon.png" alt="inicio"></button></nav>
 				<nav class="sub-menu1"><button onclick="window.location='./painelJogo.php';"><img src="img/salao_icon.png" alt="salao"></button></nav>
 				<nav class="sub-menu1"><button><img src="img/comercio_icon.png" alt="comercio"></button></nav>
 				<nav class="sub-menu1"><button><img src="img/carteira_icon.png" alt="carteira"></button></nav>
-				<nav class="sub-menu1"><button><img src="img/perfil_icon.png" alt="perfil"></button></nav>
+				<nav class="sub-menu1"><button onclick="window.location='./painelUsuario';"><img src="img/perfil_icon.png" alt="perfil"></button></nav>
 			</div>
 		</div>
 	</body>
