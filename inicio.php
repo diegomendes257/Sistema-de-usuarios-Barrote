@@ -66,39 +66,6 @@
 					<p>Vá para a aba de salão para se divertir! Ganhe moedas fazendo as tarefas!</p>
 				</section>
 				<section id="dados" class="container-fluid bg-white">
-					<div class="container bg-primary listaInscritos">
-						<?php
-							echo'<table border="1">
-									<tr>
-										<td>
-											<span>Nome: </span>
-										</td>
-										<td>
-											<span>E-mail</span>
-										</td>
-										<td>
-											<span>Criado em:</span>
-										</td>
-									</tr>
-								';
-							while($mostraTudo = $consultaTudo->fetch()){
-								echo '
-									<tr><br/>
-										<td>
-											'.$mostraTudo['nome'].'
-										</td>
-										<td>
-											'.$mostraTudo['email'].'
-										</td>
-										<td>
-											'.date_format(new DateTime($mostraTudo['criado']), "d/m/Y H:i").'<br/>
-										</td>
-									</tr>
-								</table>
-								';
-							}
-						?>					
-					</div>
 					<div class="container bg-dark">
 						<p>Lista de quem se inscreveu</p>
 					</div>

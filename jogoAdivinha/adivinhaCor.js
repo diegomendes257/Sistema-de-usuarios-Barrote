@@ -69,9 +69,9 @@ $(document).ready(function(){
 				url:'enviaBonus.php',
 				type:'POST',
 				data: {
-					pontos: pontos,
+					pontos: pontos
 				},
-				success: function(data){
+				success: function(){
 					if(pontos == 1){
 						alert("Você ganhou moedas");
 						exibeNome(numeroAleatorio, numeroAleatorio2);
@@ -97,8 +97,10 @@ $(document).ready(function(){
 			$.ajax({
 				url:'enviaBonus.php',
 				type:'POST',
-				data: {pontos: pontos},
-				success: function(data){
+				data:{	
+						pontos: pontos
+					},
+				success: function(){
 					if(pontos == 0){
 						alert("Você perdeu moedas!");
 					}

@@ -1,6 +1,7 @@
 <?php
 
     require "../conexao1.php";
+    require "../Usuario.php";
 
     $pontos = $_POST['pontos'];
     $ganhou = 0.05;
@@ -24,18 +25,20 @@
         $insereValor->bindValue(":id",$id);
         $insereValor->execute();
 
-        $mostraSaldo = "Select saldo FROM usuario WHERE id = :id";
+        $mostraSaldo = "SELECT saldo FROM usuario WHERE id = :id";
         $mostraSaldo = $conexao->prepare($mostraSaldo);
         $mostraSaldo->bindValue(":id",$id);
         $mostraSaldo->execute();
         $mostraSaldoAtualizado = $mostraSaldo->fetch();
-
+        
         echo $mostraSaldoAtualizado;
 
     }else if($_POST['pontos'] == 0){
+
         global $conexao;
 
         $id = $_SESSION['id'];
+        
         $consulta = "SELECT id, saldo FROM usuario WHERE id = :id";
         $consulta = $conexao->prepare($consulta);
         $consulta->bindValue(":id", $id);
@@ -49,7 +52,7 @@
         $insereValor->bindValue(":id",$id);
         $insereValor->execute();
 
-        $mostraSaldo = "Select saldo FROM usuario WHERE id = :id";
+        $mostraSaldo = "SELECT saldo FROM usuario WHERE id = :id";
         $mostraSaldo = $conexao->prepare($mostraSaldo);
         $mostraSaldo->bindValue(":id",$id);
         $mostraSaldo->execute();
