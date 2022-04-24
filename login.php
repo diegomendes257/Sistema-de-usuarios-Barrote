@@ -13,13 +13,13 @@ session_start();
 
 
 		if($u->login($email, $senha) == true){
-			if(isset($_SESSION['id'])){
+			if(isset($_SESSION['id_usuario'])){
 				if($_SESSION['adm'] == 0){
 					header("Location: inicio.php");
-					$_SESSION['id'];
+					$_SESSION['id_usuario'];
 				}else{
 					header("Location: ./adm/painelADM.php");
-					$_SESSION['id'];
+					$_SESSION['id_usuario'];
 				}
 			}else{
 				header("Location: principal.php");

@@ -3,8 +3,8 @@
 	require '../Usuario.php';
 
 	$u = new Usuario();
-	$idDebita = $_SESSION['id'];
-		$consulta1 = "SELECT id, saldo, nome FROM usuario WHERE id = :id";
+	$idDebita = $_SESSION['id_usuario'];
+		$consulta1 = "SELECT id_usuario, saldo, nome FROM usuario WHERE id_usuario = :id";
 			$consulta1 = $conexao->prepare($consulta1);
 			$consulta1->bindValue(":id", $idDebita);
 			$consulta1->execute();
@@ -31,11 +31,11 @@
 				</div>
 				<div class="logout">
 					<?php 
-						if(!isset($_SESSION['id']))
+						if(!isset($_SESSION['id_usuario']))
 							header('Location: principal.php');
 						
 						if(isset($_GET['sair'])){
-							unset($_SESSION['id']);
+							unset($_SESSION['id_usuario']);
 							session_destroy();
 							header('Location: principal.php');
 						}

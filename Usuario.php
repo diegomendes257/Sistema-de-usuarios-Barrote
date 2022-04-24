@@ -16,7 +16,7 @@
 
 		if($consulta->rowCount() > 0){
 			$dado = $consulta->fetch();
-				$_SESSION['id'] = $dado['id'];
+				$_SESSION['id_usuario'] = $dado['id_usuario'];
 				$_SESSION['email'] = $dado['email'];
 				$_SESSION['nome'] = $dado['nome'];
 				$_SESSION['telefone'] = $dado['telefone'];
@@ -66,7 +66,7 @@
 		global $conexao;
 
 		$id = $_SESSION['saldo'];
-		$consulta = "SELECT id, saldo FROM usuario WHERE id = :id";
+		$consulta = "SELECT id_usuario, saldo FROM usuario WHERE id_usuario = :id";
 		$consulta = $conexao->prepare($consulta);
 		$consulta->bindValue(":id", $idValor);
 		$consulta->execute();
@@ -78,11 +78,11 @@
 		}else{
 			echo 'Aguarde um instante...';
 
-			echo '<div>Id do recebedor: '.$mostra['id'].'<br></div>';
+			echo '<div>Id do recebedor: '.$mostra['id_usuario'].'<br></div>';
 			echo '<div>Saldo anterior do recebedor: '.number_format($mostra["saldo"], 2, ",", ".").'.<br></div>';
 			$soma = $mostra['saldo'] + $valor;
 
-			$insereValor = "UPDATE usuario set saldo = "."$soma"." WHERE id = :id";
+			$insereValor = "UPDATE usuario set saldo = "."$soma"." WHERE id_usuario = :id";
 			$insereValor = $conexao->prepare($insereValor);
 			$insereValor->bindValue(":id",$idValor);
 			$insereValor->execute();
@@ -103,7 +103,7 @@
 			
 		//--------consulta os dados do recebedor
 			
-		$consulta = "SELECT id, saldo FROM usuario WHERE id = :id";
+		$consulta = "SELECT id_usuario, saldo FROM usuario WHERE id_usuario = :id";
 		$consulta = $conexao->prepare($consulta);
 		$consulta->bindValue(":id", $idValor);
 		$consulta->execute();
@@ -112,7 +112,7 @@
 		echo '<div>Saldo anterior do recebedor: <b>'.$mostra['saldo'].'</b><br></div>';
 		$soma = $mostra['saldo'] + $valor;
 
-		$consultaId = "SELECT id, saldo FROM usuario WHERE id = :id";
+		$consultaId = "SELECT id_usuario, saldo FROM usuario WHERE id_usuario = :id";
 		$consultaId = $conexao->prepare($consultaId);
 		$consultaId->bindValue(":id", $idDebita);
 		$consultaId->execute();
@@ -123,23 +123,23 @@
 			return false;
 		}else{
 			//---------insere o valor na conta do recebedor
-			$insereValor = "UPDATE usuario set saldo = "."$soma"." WHERE id = :id";
+			$insereValor = "UPDATE usuario set saldo = "."$soma"." WHERE id_usuario = :id";
 			$insereValor = $conexao->prepare($insereValor);
 			$insereValor->bindValue(":id",$idValor);
 			$insereValor->execute();
 
 			//--------consulta os dados do pagador /////////////////////////////////////////////////
-			$consulta1 = "SELECT id, saldo FROM usuario WHERE id = :id";
+			$consulta1 = "SELECT id_usuario, saldo FROM usuario WHERE id_usuario = :id";
 			$consulta1 = $conexao->prepare($consulta1);
 			$consulta1->bindValue(":id", $idDebita);
 			$consulta1->execute();
 			$mostra1 = $consulta1->fetch();
-			echo '<br /><div>Seu Id: '.$mostra1['id'].'<br></div>';
+			echo '<br /><div>Seu Id: '.$mostra1['id_usuario'].'<br></div>';
 			echo '<div>Seu saldo anterior: <b>'.$mostra1['saldo'].'</b><br></div><br />';
 			$debita = $mostra1['saldo'] - $valor;
 
 			//---------atualiza (retira) o valor da conta do pagador /////////////////////////////////////////////////
-			$retiraValor = "UPDATE usuario set saldo = "."$debita"." WHERE id = :id";
+			$retiraValor = "UPDATE usuario set saldo = "."$debita"." WHERE id_usuario = :id";
 			$retiraValor = $conexao->prepare($retiraValor);
 			$retiraValor->bindValue(":id",$idDebita);
 			$retiraValor->execute();
@@ -161,28 +161,28 @@
 	public function visualizarDados($id){
 		global $conexao;
 			
-		$consulta = "SELECT id, nome, saldo, email FROM usuario WHERE id = :id";
+		$consulta = "SELECT id_usuario, nome, saldo, email FROM usuario WHERE id_usuario = :id";
 		$consulta = $conexao->prepare($consulta);
 		$consulta->bindValue(":id",$id);
 		$consulta->execute();
 		$mostra = $consulta->fetch();
 
-		$idDebita = $_SESSION['id'];
+		$idDebita = $_SESSION['id_usuario'];
 
-		$nConsulta = "SELECT id, nome, saldo, email FROM usuario WHERE id = :id";
+		$nConsulta = "SELECT id_usuario, nome, saldo, email FROM usuario WHERE id_usuario = :id";
 		$nConsulta = $conexao->prepare($nConsulta);
 		$nConsulta->bindValue(":id",$idDebita);
 		$nConsulta->execute();
 		$mostra1 = $nConsulta->fetch();
 
-		if(!isset($mostra['id'])){
+		if(!isset($mostra['id_usuario'])){
 			echo "<div>Esse conta não existe, infelizmente, tente novamente!</div>";
 			return false;
 		}else{
 			$pega = number_format($mostra1['saldo'], 2, ',', '.');
 			$pega1 = number_format($mostra1['saldo'], 2, ',', '.');
 			echo "<h2>Seus dados: </h2>";
-			echo "<div>Seu Id: ".$mostra1['id']."<br></div>";
+			echo "<div>Seu Id: ".$mostra1['id_usuario']."<br></div>";
 			echo "<div>Seu nome: ".$mostra1['nome']."<br></div>";
 			//echo "<div>Seu saldo atual: ".$mostra1['saldo']."</div>";
 			echo "<div>Seu saldo atual: R$ ".$pega."</div>";
@@ -203,9 +203,9 @@
 		
 		global $conexao;
 
-		$id = $_SESSION['id'];
+		$id = $_SESSION['id_usuario'];
 
-		$mensagemRefValor = "SELECT saldo FROM usuario WHERE id = :id";
+		$mensagemRefValor = "SELECT saldo FROM usuario WHERE id_usuario = :id";
 		$mensagemRefValor = $conexao->prepare($mensagemRefValor);
 		$mensagemRefValor->bindValue(":id", $id);
 		$mensagemRefValor->execute();

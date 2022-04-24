@@ -79,7 +79,26 @@ $(document).ready(function(){
 					atualizaValor();
 				}
 			});
-			
+
+			var cor = coresNomeBack;
+			var palpite = selecao;
+
+			//--------------------------INSERE OS DADOS DA RODADA
+			$.ajax({
+				url:'cadastraRodadas.php',
+				type:'POST',
+				data: {
+					cor: cor,
+					palpite: palpite,
+					acerto: acerto
+				},
+				success: function(data){
+					console.log('Funfou')
+				}
+			});
+			//--------------------------FIM  --- INSERE OS DADOS DA RODADA
+
+
 		}else{
 			pontos = 0;
 			erro = erro + 1;
