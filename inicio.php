@@ -13,6 +13,14 @@
 		$consultaTudo = "SELECT * FROM usuario";
 		$consultaTudo = $conexao->prepare($consultaTudo);
 		$consultaTudo->execute();
+
+		//-------------- EXIBE FOTO -------------
+		$id = $_SESSION['id_usuario'];
+		$consultaFoto = 'SELECT path_perfil from fotosperfil WHERE id_usuario = :id';
+		$consultaFoto = $conexao->prepare($consultaFoto);
+		$consultaFoto->bindValue(':id', $id);
+		$consultaFoto->execute();
+		$exibeFoto = $consultaFoto->fetch();
 ?>
 
 <!DOCTYPE html>
@@ -66,8 +74,23 @@
 					<p>Vá para a aba de salão para se divertir! Ganhe moedas fazendo as tarefas!</p>
 				</section>
 				<section id="dados" class="container-fluid bg-white">
+
+					<style>
+            			.fotoPerfil{
+                				width: 150px;
+								border-radius: 100%;
+           			 		}
+						.textoPerfil{
+								color: white;
+							}
+        			</style>
+
 					<div class="container bg-dark">
-						<p>Lista de quem se inscreveu</p>
+						<p class="textoPerfil">SUA FOTO DE PERFIL</p>
+						<?php
+							echo "<img class='fotoPerfil' src='./".$exibeFoto['path_perfil']."'>";
+						?>
+						<p class="textoPerfil"><a href="trocaFotoPerfil.php">TROCAR FOTO DE PERFIL</a></p>
 					</div>
 					<div class="container bg-success">
 						<p>Aparecerá aqui as informações</p>

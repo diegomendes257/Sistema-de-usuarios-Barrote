@@ -1,37 +1,37 @@
 <?php 
 include "conexao1.php";
 global $conexao;
+session_id();
 
 //================================= UPLOAD SIMPLES DE IMAGEM ========= /
 
 var_dump($_FILES);
+$id_usuario = $_SESSION['id_usuario'];
 
 
 if(isset($_FILES['foto'])){
     $foto = $_FILES['foto'];
-
-    if($foto['error'])
-        echo "error ao enviar";
 
     $pasta = "img/";
     $nomeDaFoto = $foto['name'];
 
     $extensao = strtolower(pathinfo($nomeDaFoto,PATHINFO_EXTENSION));
 
-    if($extensao !='jpg' && $extensao != 'png')
+    if($extensao != 'jpg' && $extensao != 'png' && $extensao != 'jpeg')
         die("tipo de arquivo invalido");
 
         $path =  $pasta . $nomeDaFoto;
     $aceito = move_uploaded_file($foto['tmp_name'], $path);
     if($aceito)
-        $insereImagem = "INSERT INTO upload(path) VALUE(:path)";
+        $insereImagem = "INSERT INTO upload(path, id_usuario) VALUE(:path, :id_usuario)";
         $insereImagem = $conexao->prepare($insereImagem);
         $insereImagem->bindValue(":path", $path);
+        $insereImagem->bindValue(":id_usuario", $id_usuario);
         $insereImagem->execute();
         echo "<p>Arquivo Sucesso, para acessar: <a target=\"_blank\" href=\"img/$nomeDaFoto\">Clique Aqui</a>";
-    }else{
-        echo "erro ao enviar!";
-    }
+}else{
+    echo "erro ao enviar!2";
+}
 
 ?>
 
@@ -50,28 +50,9 @@ if(isset($_FILES['foto'])){
 			<br>
 		</form>
         <br />
-
-        <?php
-            $id = 2;
-            $selecionaImagem = "SELECT * FROM upload where id = :id";
-            $selecionaImagem = $conexao->prepare($selecionaImagem);
-            $selecionaImagem->bindValue(":id", $id);
-            $selecionaImagem->execute();
-            $mostraImagem1 = $selecionaImagem->fetch();
-
-            while($mostraImagem1 = $selecionaImagem->fetch()){
-                echo '<br />';
-                echo $mostraImagem1['path'];
-                echo '<br />';
-                echo $mostraImagem1['data'];
-                echo '<hr />';
-                echo '<img src="<?php echo'.$mostraImagem1["path"].';?>" alt="">';
-            }
-        ?>
-
             
-        <div><img src="<?php echo $mostraImagem1["path"];?>" alt=""></div>
-        <a href="view.php">|Ver fotos|</a><br /><br />
-        <a href="inicio.php">VOLTAR</a>
+        <div><img src="<?php echo $mostraImagem1['path']?>" alt=""></div>
+        <a href="mostrarFotos.php">|Ver fotos|</a><br /><br />
+        <a href="javascript:void(0)" onClick="history.go(-1); return false;">VOLTAR</a>
 	</body>
 </html>

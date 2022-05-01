@@ -34,7 +34,7 @@
 					<?php echo 'Barro &nbsp '.number_format($mostra1['saldo'] , 2, ',',' . ');?>
 				</div>
 				<div class="logout">
-					<a style="color:yellow" href="inicio.php">Voltar</a>
+					<a style="color:yellow" href="javascript:void(0)" onClick="history.go(-1); return false;">VOLTAR</a>
 				</div>
 			</header>
             <section class="container-fluid boxSection">

@@ -35,7 +35,7 @@
 					</div>
 				</div>
 				<div class="col-3" id="botaoVoltar">
-					<a href="../painelJogo.php">Voltar</a>
+				<a href="javascript:void(0)" onClick="history.go(-1); return false;">Voltar</a>
 				</div>
 			</div>
 		</header>
