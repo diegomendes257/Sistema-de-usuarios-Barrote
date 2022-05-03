@@ -8,14 +8,14 @@
     $id_usuario = $_SESSION['id_usuario'];
     $cor = $_POST['cor'];
     $palpite = $_POST['palpite'];
-    $acerto = $_POST['acerto'];
+    $pontos = strval($_POST['pontos']);
 
     $insertDados = 'INSERT INTO jogoadivinha(cor, palpite, acerto, id_usuario) 
-                    VALUES(:cor, :palpite,:acerto, :id_usuario)';
+                    VALUES(:cor, :palpite, :acerto, :id_usuario)';
     $insertDados = $conexao->prepare($insertDados);
     $insertDados->bindValue(':cor', $cor);
     $insertDados->bindValue(':palpite', $palpite);
-    $insertDados->bindValue(':acerto', $acerto);
+    $insertDados->bindValue(':acerto', $pontos);
     $insertDados->bindValue(':id_usuario', $id_usuario);
     $insertDados->execute();
 ?>

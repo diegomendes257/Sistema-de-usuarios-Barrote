@@ -1,6 +1,6 @@
 $(document).ready(function(){
-	
-	atualizaValor();
+
+	atualizaValor();							//funcao atualiza valor
 
 	function atualizaValor(){
 		$.ajax({
@@ -16,7 +16,7 @@ $(document).ready(function(){
 	let nomeCores = ['AZUL','AMARELO','VERDE','ROSA','CINZA','PRETO','BRANCO','VERMELHO'];
 	var Cores = ['GRAY','WHITE','BLACK','PINK','BLUE','YELLOW','RED','GREEN'];
 
-	var contAzul, contAmarelo, contVerde, contRosa, contCinza, contPreto, contBranco, contVermelho = 0;
+	//var contAzul, contAmarelo, contVerde, contRosa, contCinza, contPreto, contBranco, contVermelho = 0;
 	let numeroAleatorio = Math.floor(Math.random() * 8);
 	let numeroAleatorio2 = Math.floor(Math.random() * 8);
 	let rodadas = 1;
@@ -31,7 +31,7 @@ $(document).ready(function(){
 	function exibeNome(numeroAleatorio, numeroAleatorio2){
 		numeroAleatorio = Math.floor(Math.random() * 8);
 		numeroAleatorio2 = Math.floor(Math.random() * 8);
-		pegandoCorCss = document.getElementById('nome1');
+		//pegandoCorCss = document.getElementById('nome1');
 		
 		var numero = numeroAleatorio;
 		var numero2 = numeroAleatorio2;
@@ -51,7 +51,6 @@ $(document).ready(function(){
 		coresNomeBack = pegandoCorCss.style.color;
 		selecao = document.querySelector('input[name=esc1]:checked').value;
 
-
 		if(selecao === coresNomeBack){
 			pontos = 1;
 			acerto = acerto + 1;
@@ -61,8 +60,9 @@ $(document).ready(function(){
 			}else{
 				alert("Parabéns, você acertou! Você acertou " + acerto + " vezes");
 			}
-			divResultado = document.getElementById('resultado_adivinhaCor');
-			divResultado.innerHTML += '<br><p><b>' + rodadas +'ª rodada:</b><br> <span style="color:green"> A cor é <b>'+ coresNomeBack + '</b>, e você ACERTOU!<br>"PARABÉNS"</span></p>'
+			//divResultado = document.getElementById('resultado_adivinhaCor');
+			//divResultado.innerHTML += '<br><p><b>' + rodadas +'ª rodada:</b><br> <span style="color:green"> A cor é <b>'+ coresNomeBack + '</b>, e você ACERTOU!<br>"PARABÉNS"</span></p>'
+			
 			rodadas = rodadas + 1;
 
 			$.ajax({
@@ -90,16 +90,16 @@ $(document).ready(function(){
 				data: {
 					cor: cor,
 					palpite: palpite,
-					acerto: acerto
+					pontos: pontos
 				},
 				success: function(data){
 					console.log('Funfou')
 				}
 			});
+			
 			//--------------------------FIM  --- INSERE OS DADOS DA RODADA
 
-
-		}else{
+		}else if(selecao != coresNomeBack){
 			pontos = 0;
 			erro = erro + 1;
 
@@ -126,6 +126,26 @@ $(document).ready(function(){
 					atualizaValor();
 				}
 			});
+
+			
+
+			var cor = coresNomeBack;
+			var palpite = selecao;
+
+			//--------------------------INSERE OS DADOS DA RODADA
+			$.ajax({
+				url:'cadastraRodadas.php',
+				type:'POST',
+				data:{
+					cor: cor,
+					palpite: palpite,
+					pontos: pontos
+				},
+				success: function(data){
+					console.log('Jogou errado');
+				}
+			});
+			//--------------------------FIM  --- INSERE OS DADOS DA RODADA
 		}
 	});
 });

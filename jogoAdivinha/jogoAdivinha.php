@@ -7,7 +7,12 @@
 	$consulta1->bindValue(":id", $idDebita);
 	$consulta1->execute();
 	$mostra1 = $consulta1->fetch();
-	
+
+	$exibeResultado = "SELECT id_rodada, cor, palpite, acerto, jogada FROM jogoadivinha WHERE id_usuario = :id";
+	$exibeResultado = $conexao->prepare($exibeResultado);
+	$exibeResultado->bindValue(":id", $idDebita);
+	$exibeResultado->execute();
+	$dados = $exibeResultado->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -121,9 +126,35 @@
 			<div>							<!-- DIV RESULTADO -->
 				<div class="container-fluid" id="container_meioPrincipal">
 					<div id="resultado_adivinhaCor" class="container-fluid">
-						<p class="text-center"><b>O resultado vai ser mostrado aqui: </b></p>
+						<p class="h5 mb-3 text-center"><b>O resultado vai ser mostrado aqui: </b></p>
 						<div>
-							
+							<table class="table">
+								<thead>
+									<tr>
+										<th scope="col">ID</th>
+										<th scope="col">Cor</th>
+										<th scope="col">Seu palpite</th>
+										<th scope="col">Data e hora</th>
+									<tr>
+								</thead>		
+							</table>
+							<?php
+								foreach ($dados as $key => $value) {
+									echo '<div class="conteiner-fluid">';
+										echo '<div class="row">';
+											if($value['acerto'] == 0){
+												echo '<div class="col-1 mt-1 text-center border-bottom bg-danger">'.$value['id_rodada'].'</div>';
+											}else if($value['acerto'] == 1){
+												echo '<div class="col-1 mt-1 text-center border-bottom bg-primary">'.$value['id_rodada'].'</div>';
+											}
+											echo '<div class="col-2 mt-1 text-center border-bottom">'.$value['cor'].'</div>';
+											echo '<div class="col-2 mt-1 text-center border-bottom">'.$value['palpite'].'</div>';
+											echo '<div class="col-7 mt-1 text-center border-bottom">'.$value['jogada'].'</div>';
+											echo '<hr>';
+										echo '</div>';
+									echo '</div>';
+								}
+							?>
 						</div>
 					</div>
 				</div>

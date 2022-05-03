@@ -33,6 +33,6 @@
             }
         ?>
     </div><br />
-    <a href="javascript:void(0)" onClick="history.go(-1); return false;">CLIQUE PARA VOLTAR</a>
+    <a href="formImagem.php">CLIQUE PARA VOLTAR</a>
 </body>
 </html>

@@ -53,6 +53,6 @@ if(isset($_FILES['foto'])){
             
         <div><img src="<?php echo $mostraImagem1['path']?>" alt=""></div>
         <a href="mostrarFotos.php">|Ver fotos|</a><br /><br />
-        <a href="javascript:void(0)" onClick="history.go(-1); return false;">VOLTAR</a>
+        <a href="inicio.php">VOLTAR</a>
 	</body>
 </html>
