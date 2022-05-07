@@ -86,9 +86,14 @@
         			</style>
 
 					<div class="container bg-dark">
-						<p class="textoPerfil">SUA FOTO DE PERFIL</p>
 						<?php
-							echo "<img class='fotoPerfil' src='./".$exibeFoto['path_perfil']."'>";
+							if($exibeFoto == true){
+								echo '<p class="textoPerfil">SUA FOTO DE PERFIL - Ficou muito bom!<p>';
+								echo "<img class='fotoPerfil' src='./".$exibeFoto['path_perfil']."'>";
+							}else{
+								echo '<p class="textoPerfil">SUA FOTO DE PERFIL - Adicione uma!</p>';
+								echo "<img class='fotoPerfil' src='./img/perfil_icon.png'>";
+							}
 						?>
 						<p class="textoPerfil"><a href="trocaFotoPerfil.php">TROCAR FOTO DE PERFIL</a></p>
 					</div>

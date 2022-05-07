@@ -12,8 +12,8 @@ $id_usuario = $_SESSION['id_usuario'];
 if(isset($_FILES['foto'])){
     $foto = $_FILES['foto'];
 
-    $pasta = "img/";
     $nomeDaFoto = $foto['name'];
+    $pasta = "img/";
 
     $extensao = strtolower(pathinfo($nomeDaFoto,PATHINFO_EXTENSION));
 
@@ -29,8 +29,6 @@ if(isset($_FILES['foto'])){
         $insereImagem->bindValue(":id_usuario", $id_usuario);
         $insereImagem->execute();
         echo "<p>Arquivo Sucesso, para acessar: <a target=\"_blank\" href=\"img/$nomeDaFoto\">Clique Aqui</a>";
-}else{
-    echo "erro ao enviar!2";
 }
 
 ?>
