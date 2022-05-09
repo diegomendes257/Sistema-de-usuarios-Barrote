@@ -3,11 +3,11 @@
 	require('../Usuario.php');
 
 	$u = new Usuario();
-	$idDebita = $_SESSION['id'];
+	$idDebita = $_SESSION['id_usuario'];
 	$adm = $_SESSION['adm'];
 	$u->validaUsuario($idDebita, $adm);
 
-	$consulta1 = "SELECT id, saldo, nome, adm FROM usuario WHERE id = :id";
+	$consulta1 = "SELECT id_usuario, saldo, nome, adm FROM usuario WHERE id_usuario = :id";
 	$consulta1 = $conexao->prepare($consulta1);
 	$consulta1->bindValue(":id", $idDebita);
 	$consulta1->execute();
@@ -38,11 +38,11 @@
 				</div>
 				<div class="logout">
 					<?php 
-						if(!isset($_SESSION['id']))
+						if(!isset($_SESSION['id_usuario']))
 							header('Location: principal.php');
 						
 						if(isset($_GET['sair'])){
-							unset($_SESSION['id']);
+							unset($_SESSION['id_usuario']);
 							header('Location: principal.php');
 						}
 					?>
@@ -63,13 +63,6 @@
 				<section id="dados">
 					dados
 				</section>
-			</div>
-			<div class="menu">
-			<nav class="sub-menu1"><button onclick="window.location='../inicio.php'"><img src="../img/inicio_icon.png" alt="inicio"></button></nav>
-				<nav class="sub-menu1"><button onclick="window.location='../painelJogo.php';"><img src="../img/salao_icon.png" alt="salao"></button></nav>
-				<nav class="sub-menu1"><button><img src="../img/comercio_icon.png" alt="comercio"></button></nav>
-				<nav class="sub-menu1"><button><img src="../img/carteira_icon.png" alt="carteira"></button></nav>
-				<nav class="sub-menu1"><button onclick="window.location='../painelUsuario';"><img src="../img/perfil_icon.png" alt="perfil"></button></nav>
 			</div>
 		</div>
 	</body>

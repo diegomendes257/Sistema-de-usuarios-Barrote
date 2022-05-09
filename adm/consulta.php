@@ -4,7 +4,7 @@
 	$u = new Usuario();
 	session_id();
 
-	$idDebita = $_SESSION['id'];
+	$idDebita = $_SESSION['id_usuario'];
 	$adm = $_SESSION['adm'];
 
 	$u->validaUsuario($idDebita, $adm);

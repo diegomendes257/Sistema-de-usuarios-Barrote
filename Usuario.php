@@ -84,7 +84,7 @@
 
 			$insereValor = "UPDATE usuario set saldo = "."$soma"." WHERE id_usuario = :id";
 			$insereValor = $conexao->prepare($insereValor);
-			$insereValor->bindValue(":id",$idValor);
+			$insereValor->bindValue(":id", $idValor);
 			$insereValor->execute();
 
 			$consulta->execute();
@@ -108,7 +108,7 @@
 		$consulta->bindValue(":id", $idValor);
 		$consulta->execute();
 		$mostra = $consulta->fetch();
-		echo '<div>Id do recebedor: '.$mostra['id'].'<br></div>';
+		echo '<div>Id do recebedor: '.$mostra['id_usuario'].'<br></div>';
 		echo '<div>Saldo anterior do recebedor: <b>'.$mostra['saldo'].'</b><br></div>';
 		$soma = $mostra['saldo'] + $valor;
 

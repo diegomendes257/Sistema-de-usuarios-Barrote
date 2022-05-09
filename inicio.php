@@ -60,12 +60,12 @@
 					<a style="color:yellow" href="inicio.php?sair=true">SAIR</a>
 				</div>
 			</header>
-			<nav style='text-align:center'>
+			<!--<nav style='text-align:center'>
 						<a href="./adm/consulta.php">Clique para consultar!</a> - /
 						<a href="./adm/adicionaValor.php">Clique para creditar dinheiro para alguém!</a> - /
 						<a href="./adm/adicionaValorDado.php">Clique para creditar e ser debitado!</a> - /
 						<a href="formImagem.php">Carregar imagem!</a>
-			</nav>
+			</nav> -->
 			<div class="meio">
 				<section class="container-fluid bg-white banner">
 					<h2>

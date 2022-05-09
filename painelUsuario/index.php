@@ -56,7 +56,7 @@
             <div class="menu">
 				<nav class="sub-menu1"><button onclick="window.location='../inicio.php'"><img src="../img/inicio_icon.png" alt="inicio"></button></nav>
 				<nav class="sub-menu1"><button onclick="window.location='../painelJogo.php';"><img src="../img/salao_icon.png" alt="salao"></button></nav>
-				<nav class="sub-menu1"><button><img src="../img/comercio_icon.png" alt="comercio"></button></nav>
+				<nav class="sub-menu1"><button onclick="window.location='../comercio.php';"><img src="../img/comercio_icon.png" alt="comercio"></button></nav>
 				<nav class="sub-menu1"><button><img src="../img/carteira_icon.png" alt="carteira"></button></nav>
 				<nav class="sub-menu1"><button onclick="window.location='index.php';"><img src="../img/perfil_icon.png" alt="perfil"></button></nav>
 			</div>

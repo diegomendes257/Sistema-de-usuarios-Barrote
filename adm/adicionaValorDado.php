@@ -5,7 +5,7 @@
     require '../Usuario.php';
 
 	$u = new Usuario();
-	$idDebita = $_SESSION['id'];
+	$idDebita = $_SESSION['id_usuario'];
 	$adm = $_SESSION['adm'];
 
 	$u->validaUsuario($idDebita, $adm);
@@ -14,7 +14,7 @@
 		
 		$idValor = addslashes($_POST['id']);
 		$valor = addslashes($_POST['valor']);
-		$idDebita = $_SESSION['id'];
+		$idDebita = $_SESSION['id_usuario'];
 
 		if (is_numeric($valor) && is_numeric($idValor)){
 			$u->adicionarValorDado($idValor,$valor, $idDebita);
