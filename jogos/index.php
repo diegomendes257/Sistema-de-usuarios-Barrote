@@ -56,7 +56,7 @@
 							header('Location: principal.php');
 						}
 					?>
-					<a style="color:yellow" href="inicio.php?sair=true">SAIR</a>
+					<a style="color:yellow" href="../inicio.php?sair=true">SAIR</a>
 				</div>
 			</header>
 			<div class="meio">

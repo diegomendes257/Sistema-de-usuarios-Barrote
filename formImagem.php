@@ -5,7 +5,7 @@ session_id();
 
 //================================= UPLOAD SIMPLES DE IMAGEM ========= /
 
-var_dump($_FILES);
+//var_dump($_FILES);
 $id_usuario = $_SESSION['id_usuario'];
 
 

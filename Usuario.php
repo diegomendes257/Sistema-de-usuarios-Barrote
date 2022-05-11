@@ -145,16 +145,16 @@
 			$retiraValor->execute();
 
 			//---------consulta os valores das duas contas (recebedor e pagador) ///////////////////////////////////////////////// 
-				$consulta1->execute();
-				$mostra1 = $consulta1->fetch();
-				$consulta->execute();
-				$mostra = $consulta->fetch();
-				echo '<div>Saldo atual do recebedor: <b>'.$mostra['saldo'].'</b></div><br/>';
-				echo 'Seu saldo atual: <b>'.$mostra1['saldo'].'</b>';
-				unset($insereValor); //fecha a consulta
-				return true;
-			}
+			$consulta1->execute();
+			$mostra1 = $consulta1->fetch();
+			$consulta->execute();
+			$mostra = $consulta->fetch();
+			echo '<div>Saldo atual do recebedor: <b>'.$mostra['saldo'].'</b></div><br/>';
+			echo 'Seu saldo atual: <b>'.$mostra1['saldo'].'</b>';
+			unset($insereValor); //fecha a consulta
+			return true;
 		}
+	}
 
 //------------------------VISUALIZAR DADOS--------------------------------------------------
 
