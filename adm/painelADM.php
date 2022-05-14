@@ -61,8 +61,9 @@
 					<p></p>
 				</section>
 				<section id="dados">
-					dados
-				</section>
+					dados</br>
+				</section></br>
+				<a href="exibeUsuario.php">Clique para ver fotos e nomes dos usuarios!</a>
 			</div>
 		</div>
 	</body>

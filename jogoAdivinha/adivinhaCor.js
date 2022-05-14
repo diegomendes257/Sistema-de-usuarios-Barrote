@@ -1,6 +1,8 @@
 $(document).ready(function(){
 
 	atualizaValor();							//funcao atualiza valor
+	mostrarDados();
+
 
 	function atualizaValor(){
 		$.ajax({
@@ -9,6 +11,17 @@ $(document).ready(function(){
 			data: {tem: true},
 			success: function(data){
 				$('.valorExibe').html(data)
+			}
+		});
+	}
+
+	function mostrarDados(){
+		$.ajax({
+			type: 'POST',
+			url: 'mostraRodada.php',
+			data: {tem: true},
+			success: function(data){
+				$('#imprimi').html(data)
 			}
 		});
 	}
@@ -94,6 +107,7 @@ $(document).ready(function(){
 				},
 				success: function(data){
 					console.log('Funfou')
+					mostrarDados();
 				}
 			});
 			
@@ -124,10 +138,10 @@ $(document).ready(function(){
 						alert("Você perdeu moedas!");
 					}
 					atualizaValor();
+					atualizaRodada();							//funcao atualiza rodada
 				}
 			});
 
-			
 
 			var cor = coresNomeBack;
 			var palpite = selecao;
@@ -143,6 +157,7 @@ $(document).ready(function(){
 				},
 				success: function(data){
 					console.log('Jogou errado');
+					mostrarDados();
 				}
 			});
 			//--------------------------FIM  --- INSERE OS DADOS DA RODADA

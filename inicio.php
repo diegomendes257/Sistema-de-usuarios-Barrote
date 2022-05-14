@@ -72,6 +72,7 @@
 						<b>Aqui é o início de tudo!!!</b>
 					</h2>
 					<p>Vá para a aba de salão para se divertir! Ganhe moedas fazendo as tarefas!</p>
+					<a href="formImagem.php">Coloque fotos na sua galeria</a>
 				</section>
 				<section id="dados" class="container-fluid bg-white">
 
@@ -117,6 +118,7 @@
 							}
 						</script>
 					</div>
+					
 				</section>
 			</div>
 			<div class="menu">
