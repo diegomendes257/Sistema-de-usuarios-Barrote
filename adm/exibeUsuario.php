@@ -9,10 +9,10 @@
 
     $id = $_SESSION['id_usuario'];
 
-    $exibeUsuario = 'SELECT usuario.nome, fotosperfil.path_perfil
+    $exibeUsuario = 'SELECT usuario.nome, usuario.id_usuario, fotosperfil.path_perfil
                     from usuario 
                     INNER JOIN fotosperfil 
-                    on usuario.id_usuario = fotosperfil.id_usuario';
+                    on usuario.id_usuario = fotosperfil.id_usuario ';
     $exibeUsuario = $conexao->prepare($exibeUsuario);
     //$exibeUsuario->bindValue(':usuarioId', $id);
     $exibeUsuario->execute();
@@ -35,10 +35,17 @@
     <div style='display:flex; justify-content:center;' >
     <?php
         while($exibeTodos = $exibeUsuario->fetch()){
+            $imgString = "<img class='fotoPerfil' src='../img/perfil_icon.png'>";
+            $imgString;
             echo '<div style="margin: 0px 15px; padding:5px; text-align:center; background-color:#fff9e7;">';
-            echo '<p>'.$exibeTodos['nome'].'</p>';
-            echo "<a target=\"_blank\" href=\"".$exibeTodos['path_perfil']."\"><img style='width:100px'  src='../".$exibeTodos['path_perfil']."'></a>";
-            echo '</div>';
+            echo '<p>'.''.$exibeTodos['id_usuario'].' - '.$exibeTodos['nome'].'</p>';
+            if($exibeTodos['path_perfil'] == ""){
+                echo "<a target=\"_blank\" href=\"".$imgString."\"><img style='width:100px'  src='../".$imgString."'></a>";
+                echo '</div>';
+            }else{
+                echo "<a target=\"_blank\" href=\"../".$exibeTodos['path_perfil']."\"><img style='width:100px'  src='../".$exibeTodos['path_perfil']."'></a>";
+                echo '</div>';
+            }
         }
     ?>
     </div>

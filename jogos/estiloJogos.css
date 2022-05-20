@@ -1,0 +1,184 @@
+*{
+	padding: 0;
+	margin: 0 auto;
+}
+
+@font-face{
+	font-family: 'BebasNeue';
+	src:url("../fontes/BebasNeue-Regular.otf");
+}
+
+body{
+	display: flex;
+	flex-direction: column;
+    border: 1px solid rgb(0, 17, 255);
+}
+
+input{
+	width: 95%;
+	padding: 7px;
+	border-radius: 7px;
+	border: 1px solid #CFF7DC;
+}
+
+input[type=submit]{
+	background-color: #CFF7DC;
+	cursor: pointer;
+}
+
+
+
+.geral{
+	width: 100%;
+}
+
+.topo{
+	width: 100%;
+	height: 70px;
+	background-color: green;
+	display: flex;
+}
+
+.nome{
+	color: white;
+	font-family: 'BebasNeue', arial;
+	font-size: 20pt; 
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.bem-vindo{
+	font-family: arial;	
+	font-size: 12pt; 
+}
+
+.logout{
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.meio{
+	height: 100vh;
+	background-color: #DFFFEA;
+	display: flex;
+    flex-direction: column;
+	text-align: center;
+	font-family: 'arial';
+    border: 1px solid red;
+}
+
+
+
+
+
+
+/*MEDIAS QUERY*/
+
+/*__________________ 320 */
+
+@media (max-width: 500px) {
+ 
+	.menu{
+		display: flex;
+		flex-wrap: column;
+	}
+
+	.sub-menu1{
+		width: 65px;
+		height: 80px;
+		display: flex;
+	}
+
+	.sub-menu1 img{
+		width: 40px;
+		height: 40px;
+	}
+
+	.topo{
+		width: 100%;
+		height: 100px;
+		padding: 25px;
+		background-color: green;
+		display: flex;
+	}
+}
+
+@media (max-width: 360px) {
+ 
+
+	.menu{
+		display: flex;
+		flex-wrap: column;
+	}
+
+	  .sub-menu1{
+		width: 40px;
+		height: 60px;
+		display: flex;
+	}
+
+		.sub-menu1 img{
+		width: 30px;
+		height: 30px;
+	}
+}
+
+
+/* --------------------- JOGO ADIVINHA CORES ---------------------------*/
+
+
+.fundo{
+	border: 1px solid red;
+	width: 800px;
+	display: block;
+	padding: 25px;
+	margin-top: 40px;
+	border: 1px solid #BDEFCD;
+	box-shadow: 0px 0px 6px #D8FCE4;
+}
+
+.divInterna{
+	height: 100px;
+	padding: 10px;
+	text-align: center;
+}
+
+.form_jogo{
+	display: flex;
+	padding: 20px;
+}
+
+.footer_adivinha{
+	width: 80%;
+	height: 100px;
+	padding: 25px;
+	margin-top: 25px;
+	margin-bottom: 100px;
+}
+
+.enviar_Adivinha{
+	width: 70%;
+	margin-top: 10px;
+	height: 80px;
+	background-color: #9CE97A;
+	padding: 25px;
+	border: none;
+	font-size: 25pt;
+	cursor: pointer;
+	font-family: 'BebasNeue', arial;
+	margin-bottom: 100px;
+}
+
+.enviar_Adivinha:hover{
+	background-color: #37781A;
+	border: none;
+	color: white;
+}
+
+
+
+
+

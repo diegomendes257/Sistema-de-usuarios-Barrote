@@ -76,7 +76,7 @@
                         </div>
                         <div class="botaoCard">
                             <nav class="">
-                                <button onclick="window.location='../jogoAdivinha/jogoAdivinha.php';">COMPETIR</button>
+                                <button onclick="window.location='confirmaJogo.php';">COMPETIR</button>
                             </nav>
                         </div>
                     </div>

@@ -26,7 +26,7 @@
 
             echo '<div class="col-2 text-center border-bottom">'.$exibeTudo['cor'].'</div>';
             echo '<div class="col-2 text-center border-bottom">'.$exibeTudo['palpite'].'</div>';
-            echo '<div class="col-7 text-center border-bottom">'.date_format($data, 'd/m/Y').' às '.date_format($data, 'H:i:s').'</div>';
+            echo '<div class="col-7 text-center border-bottom">'.date_format($data, 'd/m/Y').' às '.date_format($data, 'H:i').'</div>';
             echo '<hr>';
             echo '</div>';
             echo '</div>';
