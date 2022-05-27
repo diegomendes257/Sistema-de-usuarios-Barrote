@@ -17,7 +17,7 @@
 				<form method="POST" action="login.php"><br>
 					<input type="text" name="email" placeholder="e-mail"><br><br>
 					<input type="password" name="senha" placeholder="senha"><br><br>
-					<input type="submit" value="entrar"></input><br><br>
+					<input type="submit" value="ENTRAR"></input><br><br>
 					<span>Esqueceu a senha? <a href="cadastrar.php"><strong>Clique aqui!</strong></a></span>
 				</form>
 			</div>
