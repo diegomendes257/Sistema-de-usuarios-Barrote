@@ -1,16 +1,28 @@
-*{
-	padding: 0;
-	margin: 0 auto;
-}
+/*---------------------	IMPORTAÇÃO DE FONTES -------------------*/
 
 @font-face{
 	font-family: 'BebasNeue';
 	src:url("./fontes/BebasNeue-Regular.otf");
 }
 
+/*---------------------------	GLOBAL --------------------------*/
+
+*{
+	padding: 0;
+	margin: 0 auto;
+}
+
+
 body{
 	display: flex;
 	flex-direction: column;
+}
+
+/*------------------------ PÁGINA INÍCIO -------------------------*/
+
+.geral{
+	width: 100%;
+	height: auto;
 }
 
 .box-principal{
@@ -60,9 +72,7 @@ a{
 	color: #00B33C;
 }
 
-.geral{
-	width: 100%;
-}
+
 
 .topo{
 	width: 100%;
@@ -435,3 +445,21 @@ form{
 
 
 
+
+
+
+
+
+
+
+
+.header{
+	height: 60px;
+	display: flex;
+	align-items: center;
+}
+
+.fotoPerfil{
+	width: 150px;
+	border-radius: 100%;
+}
