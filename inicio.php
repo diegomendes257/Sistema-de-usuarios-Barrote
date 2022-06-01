@@ -39,14 +39,15 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-6">
-						<span class="text-truncate">
+						<span class="text-nowrap">
 							Bem vindo(a) &nbsp
-						</span>
-						<?php 
+							<?php 
 							echo '  '.$_SESSION['nome'];
-						?>
+							?>
+						</span>
+						
 					</div>
-					<div class="col">
+					<div class="col-4">
 						<?php echo 'Barro: '.number_format($mostra1['saldo'] , 2, ',',' . ');?>
 					</div>
 					<div class="col d-flex justify-content-center">
@@ -73,7 +74,7 @@
 		<section class="container-fluid">
 			<div class="container-fluid">
 				<div class="d-flex bg-white shadow-sm mt-4 mb-4">
-					<p class="h3 mt-4 mb-4 p-3 text-center">
+					<p class="h3 mt-4 mb-4 p-2 text-center">
 						Fiquem sempre atentos
 						as novidades.<br />
 						Dica: Juntem moedinhas!
@@ -82,7 +83,7 @@
 				<div class="container-fluid">
 					<div class="container">
 						<div class="row d-flex align-items-start m-3">
-							<div class="col-lg-3 shadow p-3 m-3 bg-white rounded text-center">
+							<div class="col-12 col-lg-3 shadow p-3 m-3 bg-white rounded text-center">
 								<div>
 									<div class="col p-1 m-1 bg-info rounded text-center">
 										<b>Ultimos cadastrados</b>
@@ -100,20 +101,20 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-lg-3 shadow p-3 m-3 bg-white rounded text-center">
+							<div class="col-12 col-lg-3 shadow p-3 m-3 bg-white rounded text-center">
 								<h5>
 								<b>Aqui é o início de tudo!!!</b>
 								</h5>
 								<p>Vá para a aba de salão para se divertir! Ganhe moedas fazendo as tarefas!</p>
 								<a href="formImagem.php">Coloque fotos na sua galeria</a>
 							</div>
-							<div class="col shadow p-3 m-3 bg-white rounded d-flex justify-content-center flex-column">
+							<div class="col-12 col-lg-4 shadow p-3 m-3 bg-white rounded d-flex justify-content-center flex-column">
 								<?php
 									if($exibeFoto == true){
-										echo '<p class="textoPerfil">SUA FOTO DE PERFIL - Ficou muito bom!<p>';
+										echo '<p class="textoPerfil text-center">SUA FOTO DE PERFIL - Ficou muito bom!<p>';
 										echo "<img class='fotoPerfil' src='./".$exibeFoto['path_perfil']."'>";
 									}else{
-										echo '<p class="textoPerfil">SUA FOTO DE PERFIL - Adicione uma!</p>';
+										echo '<p class="textoPerfil text-center">SUA FOTO DE PERFIL - Adicione uma!</p>';
 										echo "<img class='fotoPerfil' src='./img/perfil_icon.png'>";
 									}
 								?>
