@@ -155,15 +155,11 @@ a{
 	display: flex;
 }
 
-.sub-menu1 img{
-	width: 50px;
-	height: 53px;
-}
-
 .sub-menu1 button{
-	border: 0px;
 	cursor: pointer;
+	border: none;
 	padding: 7px;
+	background-color: #DFFFEA;
 }
 
 .sub-menu1 button:hover{

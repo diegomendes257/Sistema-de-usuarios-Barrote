@@ -38,7 +38,7 @@
 		<div class="geral">
 			<header class="topo">
 				<div class="nome">
-					<span class="bem-vindo">Bem vindo(a) &nbsp</span>
+					<span class="bem-vindo"></span>
 					<?php 
 						echo '  '.$_SESSION['nome'];
 					?>
