@@ -80,7 +80,7 @@ premio
 		<div class="geral">
 			<header class="topo">
 				<div class="nome">
-					<span class="bem-vindo">Bem vindo(a) &nbsp</span>
+					<span class="bem-vindo"></span>
 					<?php 
 						echo '  '.$_SESSION['nome'];
 					?>
@@ -102,29 +102,37 @@ premio
 					<a style="color:white" href="index.php">VOLTAR</a>
 				</div>
 			</header>
-			<div class="container-fluid meio bg-danger">
-                <div class='bg-warning'>
-                    <p>
-                        Nome do JOGO
-                    </p>
-                </div>
-                <div class="d-flex flex-row dadosJogo bg-warning">
-                    <div class="d-flex flex-column bg-success">
-                        <div class="col ">
-                            nome do jogo
-                        </div>
-                        <div class="col">
-                            img
-                        </div>
-                    </div>
-                    <div class="d-flex flex-column">
-                        <div>25/05/2022 as 19h</div>
-                        <div>R$ 1,00</div>
-                        <div>Acerte a cor da letra e ganhe moedas, quem ganhar mais dentro do tempo estipulado vai levar o prêmio!</div>
-                        <div>Seja o primeiro e ganhe um lindo Cortador de unhas</div>
-                        <div>300 barros</div>
-                    </div>
-                </div>
+			<div class="container border border-secondary mt-3 p-4">
+                <div class="row">
+					<div class='col text-center mt-4'>
+                    	<p class="display-4">
+                        	CONFIRME SUA PARTICIPAÇÃO
+                    	</p>
+					</div>
+				</div>
+                <div class="row justify-content-center">
+					<div class="row flex-column m-5">
+						<div class="col text-center">
+							<span >ADIVINHA A COR</span>
+						</div>
+						<div class="col m-2">
+							<img width="200px" src="../img/img_jogoAdivinha.jpg" alt="">
+						</div>
+            		</div>
+					<div class="row">
+						<div class="col m-5">
+							<div><b>Data:</b> 25/05/2022 às 19h</div><br />
+							<div><b>Prêmio:</b> Um cortador de unha</div><br />
+							<div><b>Valor:</b> 30,00 barros</div><br />
+							<div>Seja o primeiro e ganhe um lindo Cortador de unhas</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col mt-5 text-center">
+						<button class="btn btn-success">Clique para começar</button>
+					</div>
+				</div>
 			</div>
 		</div>
 	</body>
