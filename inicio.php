@@ -21,6 +21,10 @@
 		$consultaFoto->bindValue(':id', $id);
 		$consultaFoto->execute();
 		$exibeFoto = $consultaFoto->fetch();
+
+		$ultimos5 = 'SELECT nome, criado FROM usuario order by id_usuario desc LIMIT 5';
+		$consulta5 = $conexao->prepare($ultimos5);
+		$consulta5->execute();
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +45,7 @@
 					<div class="col">
 						<span class="text-center text-nowrap">
 							<?php 
-							echo 'Bem vindo(a)&nbsp<span class="text-white font-weight-bold">'.$_SESSION['nome'].'</span>';
+							echo 'Olá &nbsp<span class="text-white font-weight-bold">'.$_SESSION['nome'].'</span>';
 							?>
 						</span>
 						
@@ -86,20 +90,18 @@
 						<div class="row d-flex align-items-start">
 							<div class="col-12 col-lg-3 shadow p-3 mb-4 bg-white rounded text-center">
 								<div>
-									<div class="col p-1 m-1 bg-info rounded text-center">
+									<div class="col p-1 m-1 rounded text-center">
 										<b>Ultimos cadastrados</b>
 									</div>
 								</div>
-								<div class="col p-1 m-1 bg-info rounded">
-									<div class="col p-1 m-1 bg-info rounded text-center">
-										- - - - -  | 15/12/2022
-									</div>
-									<div class="col p-1 m-1 bg-info rounded text-center">
-										- - - - -  | 15/12/2022
-									</div>
-									<div class="col p-1 m-1 bg-info rounded text-center">
-										- - - - -  | 15/12/2022
-									</div>
+								<div class="col p-1 m-1 rounded">
+								<?php
+									while($os5 = $consulta5->fetch(PDO::FETCH_ASSOC)){
+										$dataCriado5 = date_create($os5['criado']);
+										echo '<div class="col p-1 m-1 rounded text-left"><span class="text-uppercase text-success text-truncate font-weight-bold">'.$os5["nome"].'</span>  | '.date_format($dataCriado5, "d/m/Y").' às '.date_format($dataCriado5, "H:i").'
+										</div>';
+									}
+								?>
 								</div>
 							</div>
 							<div class="col-12 col-lg-3 shadow p-3 mb-4 bg-white rounded text-center">

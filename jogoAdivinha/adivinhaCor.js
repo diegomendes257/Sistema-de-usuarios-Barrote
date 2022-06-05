@@ -3,7 +3,6 @@ $(document).ready(function(){
 	atualizaValor();							//funcao atualiza valor
 	mostrarDados();
 
-
 	function atualizaValor(){
 		$.ajax({
 			type: 'POST',

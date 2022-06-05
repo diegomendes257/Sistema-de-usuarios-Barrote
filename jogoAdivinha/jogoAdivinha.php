@@ -53,7 +53,7 @@
 					<div class="container text-center" id="divInternaDescricao">
 						<p>Abaixo vai aparecer o nome de algumas cores com a fonte pintada de uma cor, diga abaixo qual é a cor da fonte</p>
 					</div>	
-					<div class="container mb-4 text-center" id="nome1">
+					<div class="container-fluid mb-4 text-center" id="nome1">
 						<script>
 								//exibeNome(numeroAleatorio, numeroAleatorio2);					 
 						</script>
