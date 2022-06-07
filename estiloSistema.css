@@ -25,6 +25,57 @@ body{
 	height: auto;
 }
 
+
+/*------------------------ TOPO -------------------------*/
+
+.titulo{
+	color: white;
+	font-family: 'BebasNeue', arial;
+	font-size: 18pt;
+}
+
+.saldo{
+	color: white;
+	font-family: 'BebasNeue', arial;
+	font-size: 18pt;
+}
+
+
+
+
+.footer{
+	height: 60px;
+	background-color: #e3ffe4;
+	left: 0px;
+	bottom: 0px;
+	z-index: 2;
+	position: sticky;
+}
+
+.text_icon_rodape{
+	font-size: 8pt;
+}
+
+
+.sub-menu1 button{
+	cursor: pointer;
+	border: none;
+	background-color: #e3ffe4;
+}
+
+.sub-menu1 button:hover{
+	text-shadow: 1px 1px 3px rgb(41, 119, 26);
+}
+
+
+
+
+
+
+
+
+
+
 .box-principal{
 	border: 1px solid #BDEFCD;
 	padding: 25px;
@@ -135,37 +186,6 @@ a{
 	padding: 10px;
 }
 
-.menu{
-	height: 100px;
-	width: 100%;
-	left: 0px;
-	bottom: 0px;
-	display: flex;
-	flex-direction: row;
-	z-index: 2;
-	align-items: center;
-	background-color: #DFFFEA;
-	position: sticky;
-}
-
-.sub-menu1{
-	width: 180px;
-	height: 80px;
-	align-items: center;
-	display: flex;
-}
-
-.sub-menu1 button{
-	cursor: pointer;
-	border: none;
-	padding: 7px;
-	background-color: #DFFFEA;
-}
-
-.sub-menu1 button:hover{
-	background-color: #B8F5CD;
-	border-radius: 7px;
-}
 
 
 
@@ -333,28 +353,11 @@ form{
 
 
 
-
 /*MEDIAS QUERY*/
 
 /*__________________ 320 */
 
 @media (max-width: 500px) {
- 
-	.menu{
-		display: flex;
-		flex-wrap: column;
-	}
-
-	.sub-menu1{
-		width: 65px;
-		height: 80px;
-		display: flex;
-	}
-
-	.sub-menu1 img{
-		width: 40px;
-		height: 40px;
-	}
 
 	.topo{
 		width: 100%;
@@ -368,21 +371,6 @@ form{
 @media (max-width: 360px) {
  
 
-	.menu{
-		display: flex;
-		flex-wrap: column;
-	}
-
-	  .sub-menu1{
-		width: 40px;
-		height: 60px;
-		display: flex;
-	}
-
-		.sub-menu1 img{
-		width: 30px;
-		height: 30px;
-	}
 }
 
 
@@ -436,18 +424,6 @@ form{
 	border: none;
 	color: white;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 .header{
 	height: 60px;
