@@ -52,13 +52,6 @@ premio
 		$consultaTudo = $conexao->prepare($consultaTudo);
 		$consultaTudo->execute();
 
-		//-------------- EXIBE FOTO -------------
-		$id = $_SESSION['id_usuario'];
-		$consultaFoto = 'SELECT path_perfil from fotosperfil WHERE id_usuario = :id';
-		$consultaFoto = $conexao->prepare($consultaFoto);
-		$consultaFoto->bindValue(':id', $id);
-		$consultaFoto->execute();
-		$exibeFoto = $consultaFoto->fetch();
 ?>
 
 <!DOCTYPE html>
@@ -124,7 +117,7 @@ premio
 				</div>
 				<div class="row">
 					<div class="col mt-5 text-center">
-						<button class="btn btn-success">Clique para começar</button>
+						<button onclick="window.location='jogoAdivinha.php'" class="btn btn-success">Clique para começar</button>
 					</div>
 				</div>
 			</div>
