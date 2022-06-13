@@ -49,7 +49,7 @@
 					<a style="color:yellow" href="../inicio.php?sair=true">SAIR</a>
 				</div>
 			</header>
-			<nav style='text-align:center'>
+			<nav class="nav p-1 mb-2">
 						<a href="consulta.php">Clique para consultar!</a> - /
 						<a href="adicionaValor.php">Clique para creditar dinheiro para alguém!</a> - /
 						<a href="adicionaValorDado.php">Clique para creditar e ser debitado!</a> - /
@@ -61,8 +61,9 @@
 					<p></p>
 				</section>
 				<section id="dados">
-					dados</br>
+					dados
 				</section></br>
+				</br><a href="cadastroJogo.php">Inserir jogos</a></br>
 				<a href="exibeUsuario.php">Clique para ver fotos e nomes dos usuarios!</a>
 			</div>
 		</div>

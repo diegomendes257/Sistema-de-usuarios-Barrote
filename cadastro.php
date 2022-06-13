@@ -7,10 +7,10 @@ if(isset($_POST['email']) && !empty($_POST['email']) && isset($_POST['senha']) &
 
 	$u = new Usuario();
 
-	$nome =	addslashes($_POST['nome']);
-	$email =	addslashes($_POST['email']);
-	$telefone =	addslashes($_POST['telefone']);
-	$senha =	addslashes($_POST['senha']);
+	$nome =	filter_input(INPUT_POST, "nome", FILTER_DEFAULT);
+	$email =	filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
+	$telefone =	filter_input(INPUT_POST, "telefone", FILTER_DEFAULT);
+	$senha =	filter_input(INPUT_POST, "senha", FILTER_DEFAULT);
 
 	$u->cadastrar($nome,$email,$telefone,$senha);
 }

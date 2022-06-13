@@ -1,6 +1,7 @@
 <?php
 	include("conexao1.php");
 	require 'Usuario.php';
+	require './adm/Jogos.php';
 
 	$u = new Usuario();
 	$idDebita = $_SESSION['id_usuario'];
@@ -39,9 +40,7 @@
 			<header class="topo">
 				<div class="nome">
 					<span class="bem-vindo"></span>
-					<?php 
-						echo '  '.$_SESSION['nome'];
-					?>
+					COMÉRCIO
 				</div>
 				<div style="color:white;display:flex;align-items:center">
 					<?php echo 'Barro: '.number_format($mostra1['saldo'] , 2, ',',' . ');?>
@@ -61,46 +60,68 @@
 				</div>
 			</header>
             <div class="container p-2 h-auto">
-                <div class="row pt-3 h-auto">
-                    <p class="display-4">COMÉRCIO</p>
-                </div>
+				<div class="col text-center">
+					<h2 class="h2">O que é o comércio?</h2>
+					<hr>
+					<p class="desc">
+						O comércio é o lugar onde você vai poder comprar os seus materiais para trabalhar!<br />
+						Nele, você pode comprar e participar de disputas diversas. Use seu *Barro para participar;
+					</p>
+				</div>
                 <hr class="p-1" />
-                <div class="row">
-                    <div class="col-5">
-                        <h2 class="h2">O que é o comércio?</h2>
-                        <hr>
-                        <p>
-                            O comércio é o lugar onde você vai poder comprar os seus materiais para trabalhar!<br />
-                            Nele, você pode comprar e participar de disputas diversas. Use seu *barro para participar;
-                        </p>
-                    </div>
-                    <div class="col-5 border rounded text-center">
+				<div class="row">
+					<div class="col text-center text-white bg-success p-3 mb-3">
 						<p class="h3">JOGOS</p> 
-                        <div class="d-flex p-2 align-items-center flex-column border rounded">
-							<img class='w-50 fotoPerfil' src="./img/img_jogoAdivinha.jpg" alt="">
-                            <?php
-                                //echo "<img class='w-50 fotoPerfil' src='./".$exibeFoto['path_perfil']."'>";
-                            ?>
-                            <h5>ADIVINHA A COR</h5>
-                            <p>
-                                Inscrição: R$ 1,00<br />
-                                20 de maio de 2022
-                            </p>
-                            <button onclick="window.location='./jogos/index.php';" class="btn btn-primary w-100 text-truncate">CLIQUE PARA PARTICIPAR</button>
-                        </div>
+					</div>
+				</div>
+                <div class="row">
+					<?php
+						$u = new Jogos();
+						$u->exibeJogo();
+					?>
+					<div class="col-6 col-md-4">
+						<div class="d-flex p-2 align-items-center flex-column border rounded">
+							<img class='fotoPerfil mb-3 w-100' src="./img/img_jogoAdivinha.jpg" alt="">
+							<?php
+								//echo "<img class='w-50 fotoPerfil' src='./".$exibeFoto['path_perfil']."'>";
+							?>
+							<h5>ADIVINHA A COR</h5>
+							<hr class="hr border">
+							<p class="descricaoCard">
+								Inscrição: R$ 1,00<br />
+								20 de maio de 2022
+							</p>
+							<button onclick="window.location='./jogos/index.php';" class="btn btn-primary w-100 btn-sm text-truncate">PARTICIPAR</button>
+						</div>
+					</div>
+					<div class="col-6 col-md-4">
 						<div class="d-flex align-items-center flex-column p-2 border rounded">
-							<img class='w-50 fotoPerfil' src="./img/download.jpg" alt="">
-                            <?php
-                                //echo "<img class='w-50 fotoPerfil' src='./".$exibeFoto['path_perfil']."'>";
-                            ?>
-                            <h5>FORCA</h5>
-                            <p>
-                                Inscrição: R$ 1,00<br />
-                                20 de setembro de 2022
-                            </p>
-                            <button class="btn btn-primary w-100 text-truncate disabled">NÃO LIBERADO</button>
-                        </div>
-                    </div>
+							<img class='fotoPerfil w-100 mb-3' src="./img/download.jpg" alt="">
+							<?php
+								//echo "<img class='w-50 fotoPerfil' src='./".$exibeFoto['path_perfil']."'>";
+							?>
+							<h5>FORCA</h5>
+							<p class="descricaoCard">
+								Inscrição: R$ 1,00<br />
+								20 de setembro de 2022
+							</p>
+							<button class="btn btn-danger w-100 btn-sm text-truncate disabled">NÃO LIBERADO</button>
+						</div>
+					</div>
+					<div class="col-6 col-md-4">
+						<div class="d-flex align-items-center flex-column p-2 border rounded">
+							<img class='fotoPerfil mb-3 w-100' src="./img/pedraPapelTesoura.png" alt="">
+							<?php
+								//echo "<img class='w-50 fotoPerfil' src='./".$exibeFoto['path_perfil']."'>";
+							?>
+							<h5>Pedra, Papel, Tesoura</h5>
+							<p class="descricaoCard">
+								Inscrição: R$ 1,00<br />
+								21 de novembro de 2022
+							</p>
+							<button class="btn btn-danger w-100 btn-sm text-truncate disabled">NÃO LIBERADO</button>
+						</div>
+					</div>
                 </div>
             </div>
 			<footer class="container-fluid footer bg-success mt-4">
@@ -115,7 +136,6 @@
 								<div class="text_icon_rodape">INÍCIO</div>
 							</button>
 						</div>
-						
 					</nav>
 					<nav class="col text-center sub-menu1">
 						<div>

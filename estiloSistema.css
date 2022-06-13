@@ -109,6 +109,7 @@ input[type=submit]{
 }
 
 
+
 .box-link-cadastrar{
 	border: 1px solid #BDEFCD;
 	padding: 25px;
@@ -375,6 +376,18 @@ form{
 	.sub-menu1 button:hover{
 		border: none;
 	}
+
+	.desc{
+		font-size: 10pt;
+	}
+
+	h5{
+		font-size: 10pt;
+	}
+
+	.descricaoCard{
+		font-size: 7.5pt;
+	}
 	
 }
 
@@ -450,6 +463,6 @@ form{
 }
 
 .fotoPerfil{
+	border-radius: 5%;
 	width: 150px;
-	border-radius: 100%;
 }
