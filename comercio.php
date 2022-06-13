@@ -5,24 +5,11 @@
 
 	$u = new Usuario();
 	$idDebita = $_SESSION['id_usuario'];
-		$consulta1 = "SELECT id_usuario, saldo, nome FROM usuario WHERE id_usuario = :id";
+		$consulta1 = "SELECT id_usuario, saldo FROM usuario WHERE id_usuario = :id";
 		$consulta1 = $conexao->prepare($consulta1);
 		$consulta1->bindValue(":id", $idDebita);
 		$consulta1->execute();
 		$mostra1 = $consulta1->fetch();
-
-		$consultaTudo = "SELECT * FROM usuario";
-		$consultaTudo = $conexao->prepare($consultaTudo);
-		$consultaTudo->execute();
-
-		//-------------- EXIBE FOTO -------------
-        $fotoId = 6;
-		$id = $_SESSION['id_usuario'];
-		$consultaFoto = 'SELECT path_perfil from fotosperfil WHERE id_perfil = :id';
-		$consultaFoto = $conexao->prepare($consultaFoto);
-		$consultaFoto->bindValue(':id', $fotoId);
-		$consultaFoto->execute();
-		$exibeFoto = $consultaFoto->fetch();
 ?>
 
 <!DOCTYPE html>
@@ -79,49 +66,6 @@
 						$u = new Jogos();
 						$u->exibeJogo();
 					?>
-					<div class="col-6 col-md-4">
-						<div class="d-flex p-2 align-items-center flex-column border rounded">
-							<img class='fotoPerfil mb-3 w-100' src="./img/img_jogoAdivinha.jpg" alt="">
-							<?php
-								//echo "<img class='w-50 fotoPerfil' src='./".$exibeFoto['path_perfil']."'>";
-							?>
-							<h5>ADIVINHA A COR</h5>
-							<hr class="hr border">
-							<p class="descricaoCard">
-								Inscrição: R$ 1,00<br />
-								20 de maio de 2022
-							</p>
-							<button onclick="window.location='./jogos/index.php';" class="btn btn-primary w-100 btn-sm text-truncate">PARTICIPAR</button>
-						</div>
-					</div>
-					<div class="col-6 col-md-4">
-						<div class="d-flex align-items-center flex-column p-2 border rounded">
-							<img class='fotoPerfil w-100 mb-3' src="./img/download.jpg" alt="">
-							<?php
-								//echo "<img class='w-50 fotoPerfil' src='./".$exibeFoto['path_perfil']."'>";
-							?>
-							<h5>FORCA</h5>
-							<p class="descricaoCard">
-								Inscrição: R$ 1,00<br />
-								20 de setembro de 2022
-							</p>
-							<button class="btn btn-danger w-100 btn-sm text-truncate disabled">NÃO LIBERADO</button>
-						</div>
-					</div>
-					<div class="col-6 col-md-4">
-						<div class="d-flex align-items-center flex-column p-2 border rounded">
-							<img class='fotoPerfil mb-3 w-100' src="./img/pedraPapelTesoura.png" alt="">
-							<?php
-								//echo "<img class='w-50 fotoPerfil' src='./".$exibeFoto['path_perfil']."'>";
-							?>
-							<h5>Pedra, Papel, Tesoura</h5>
-							<p class="descricaoCard">
-								Inscrição: R$ 1,00<br />
-								21 de novembro de 2022
-							</p>
-							<button class="btn btn-danger w-100 btn-sm text-truncate disabled">NÃO LIBERADO</button>
-						</div>
-					</div>
                 </div>
             </div>
 			<footer class="container-fluid footer bg-success mt-4">

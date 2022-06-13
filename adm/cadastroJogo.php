@@ -62,8 +62,8 @@
                     <input type="date" name="dataInicio"/>
                     <input type="time" name="hora-inicio">
                     <input type="date" name="dataFim"/></br>
-					<label>Ativado<input type="radio" name="ativo" value="ativado"/></label>
-					<label>Desativado<input type="radio" name="ativo" value="desativado"/></label>
+					<label>Ativado<input type="radio" name="ativo" value="1"/></label>
+					<label>Desativado<input type="radio" name="ativo" value="0"/></label>
                     <input type="textArea" name="descricaoJogo" placeholder="Descrição do jogo"/>
 					<input type="text" name="link" placeholder="Link do jogo"/>
                     <input type="file" name="foto"/><br />

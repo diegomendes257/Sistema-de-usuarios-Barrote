@@ -16,6 +16,7 @@
         $ativo =	filter_input(INPUT_POST, "ativo", FILTER_DEFAULT);
         $descricaoJogo =	filter_input(INPUT_POST, "descricaoJogo", FILTER_DEFAULT);
         $foto =	filter_input(INPUT_POST, "foto", FILTER_DEFAULT);
+        $link =	filter_input(INPUT_POST, "link", FILTER_DEFAULT);
 
         if(isset($_FILES['foto'])){
             $foto = $_FILES['foto'];
@@ -30,7 +31,7 @@
             $aceito = move_uploaded_file($foto['tmp_name'], $path);
         }
 
-        $u->criaJogo($nome, $valorJogo, $premioJogo, $dataInicio, $dataFim, $descricaoJogo, $path, $ativo);
+        $u->criaJogo($nome, $valorJogo, $premioJogo, $dataInicio, $dataFim, $descricaoJogo, $path, $ativo, $link);
     }
 
 ?>
