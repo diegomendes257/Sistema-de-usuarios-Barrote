@@ -74,10 +74,6 @@ body{
 
 
 
-
-
-
-
 .box-principal{
 	border: 1px solid #BDEFCD;
 	padding: 25px;
@@ -278,6 +274,15 @@ form{
 
 
 
+/*-------------------- formIMAGEM carrega foto ---------------------------*/
+
+
+
+
+
+
+
+
 /*-------------------- PAINEL JOGO ---------------------------*/
 
 .boxSection{
@@ -388,8 +393,15 @@ form{
 	.descricaoCard{
 		font-size: 7.5pt;
 	}
+
+	.msg{
+		font-size: 7.5pt;
+	}
 	
 }
+
+
+
 
 @media (max-width: 360px) {
 	
@@ -402,6 +414,9 @@ form{
 	}
 	
 
+
+	/*-------------------- formIMAGEM carrega foto ---------------------------*/
+	
 }
 
 

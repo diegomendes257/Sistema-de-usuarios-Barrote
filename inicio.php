@@ -97,6 +97,12 @@
 					<div class="container">
 						<div class="row d-flex align-items-start">
 							<div class="col-12 col-lg-3 shadow p-3 mb-4 bg-white rounded text-center">
+								<h5>
+								<b>Aqui é o início de tudo!!!</b>
+								</h5>
+								<p>Vá para a aba de salão para se divertir! Ganhe moedas fazendo as tarefas! Você sabia também que pode colocar fotos na sua galeria?</p>
+							</div>
+							<div class="col-12 col-lg-3 shadow p-3 mb-4 bg-white rounded text-center">
 								<div>
 									<div class="col p-1 m-1 rounded text-center">
 										<b>Ultimos cadastrados</b>
@@ -106,7 +112,7 @@
 								<?php
 									while($os5 = $consulta5->fetch(PDO::FETCH_ASSOC)){
 										$dataCriado5 = date_create($os5['criado']);
-										echo '<div class="col p-1 m-1 rounded text-left"><span class="text-uppercase text-success text-truncate font-weight-bold">'.$os5["nome"].'</span>  | '.date_format($dataCriado5, "d/m/Y").' às '.date_format($dataCriado5, "H:i").'
+										echo '<div class="col p-1 m-1 rounded text-center text-lg-left"><span class="text-uppercase text-success text-truncate font-weight-bold">'.$os5["nome"].'</span>  | '.date_format($dataCriado5, "d/m/Y").' às '.date_format($dataCriado5, "H:i").'
 										</div>';
 									}
 								?>
@@ -114,9 +120,10 @@
 							</div>
 							<div class="col-12 col-lg-3 shadow p-3 mb-4 bg-white rounded text-center">
 								<h5>
-								<b>Aqui é o início de tudo!!!</b>
+								<b>Acessar suas fotos!!!</b>
 								</h5>
-								<p>Vá para a aba de salão para se divertir! Ganhe moedas fazendo as tarefas!</p>
+								<p>Quer ver quais fotos já foram carregadas?</p>
+								<a class="btn btn-success w-100" href="mostrarFotos.php">VER GALERIA</a><br /><br />
 								<a href="formImagem.php">Coloque fotos na sua galeria</a>
 							</div>
 							<div class="col-12 col-lg-4 shadow p-3 mb-4 bg-white rounded d-flex justify-content-center flex-column">
